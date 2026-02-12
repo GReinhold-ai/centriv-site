@@ -83,14 +83,17 @@ nav {
 .nav-links a:hover { color: var(--accent-gold); }
 
 .nav-cta {
+  display: inline-block;
   padding: 0.6rem 1.5rem;
   background: transparent;
   border: 1px solid var(--accent-gold);
   color: var(--accent-gold);
+  font-family: 'Outfit', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -626,16 +629,16 @@ footer .copy {
     <a href="#agents">Agents</a>
     <a href="#methodology">Methodology</a>
     <a href="#founder">Founder</a>
-    <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM ↗</a>
+    <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM &#8599;</a>
   </div>
-  <button class="nav-cta">Contact</button>
+  <a href="mailto:gary@centriv.ai" class="nav-cta">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">◆ Domain-Expert AI Agents for Regulated Industries</div>
+  <div class="hero-badge">&#9670; Domain-Expert AI Agents for Regulated Industries</div>
   <h1>The <em>Profound Center</em> of Industrial AI</h1>
-  <p class="hero-sub">We build AI agents for asset-heavy industries — fintech, construction, energy, aviation, defense & logistics — all secured by AICM, our open-source agent integrity monitor for regulated environments.</p>
+  <p class="hero-sub">We build AI agents for asset-heavy industries — fintech, construction, energy, aviation, defense &amp; logistics — all secured by AICM, our open-source agent integrity monitor for regulated environments.</p>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="num">40+</div>
@@ -658,39 +661,37 @@ footer .copy {
 
 <!-- DEMING VENN -->
 <section class="venn-section" id="philosophy">
-  <div class="section-label">◆ Our Philosophy</div>
+  <div class="section-label">&#9670; Our Philosophy</div>
   <h2>Profound Knowledge Grows at the Center</h2>
   <p class="subtitle">Inspired by Deming's System of Profound Knowledge — as domain expertise deepens in each vertical, the convergent center expands, making every agent stronger.</p>
 
   <div class="venn-container">
-    <!-- Outer: Industry Verticals -->
     <div class="venn-circle vc-fintech">
-      <div class="icon">◈</div>
-      <div class="name">Fintech & Banking</div>
+      <div class="icon">&#9672;</div>
+      <div class="name">Fintech &amp; Banking</div>
       <div class="sub">RewmoAI</div>
     </div>
     <div class="venn-circle vc-construction">
-      <div class="icon">▣</div>
-      <div class="name">Construction & Infrastructure</div>
+      <div class="icon">&#9635;</div>
+      <div class="name">Construction &amp; Infrastructure</div>
       <div class="sub">ProjMgt.AI</div>
     </div>
     <div class="venn-circle vc-energy">
-      <div class="icon">◉</div>
-      <div class="name">Energy & Climate</div>
+      <div class="icon">&#9673;</div>
+      <div class="name">Energy &amp; Climate</div>
       <div class="sub">LeafPAYS · Greenspar.x</div>
     </div>
     <div class="venn-circle vc-defense">
-      <div class="icon">⬡</div>
-      <div class="name">Defense & Logistics</div>
+      <div class="icon">&#11041;</div>
+      <div class="name">Defense &amp; Logistics</div>
       <div class="sub">Supply Chain AI</div>
     </div>
     <div class="venn-circle vc-aviation">
-      <div class="icon">△</div>
-      <div class="name">Aviation & Aerospace</div>
+      <div class="icon">&#9651;</div>
+      <div class="name">Aviation &amp; Aerospace</div>
       <div class="sub">40+ Years Flight Ops</div>
     </div>
 
-    <!-- Center: Profound Knowledge -->
     <div class="venn-center">
       <div class="core-label">Profound Knowledge</div>
       <div class="core-sub">The Growing Core</div>
@@ -704,47 +705,47 @@ footer .copy {
 
 <!-- AGENTS -->
 <section class="agents-section" id="agents">
-  <div class="section-label" style="text-align:center;">◆ The Agent Constellation</div>
+  <div class="section-label" style="text-align:center;">&#9670; The Agent Constellation</div>
   <h2>Six Verticals. One Architecture.</h2>
 
   <div class="agents-grid">
     <div class="agent-card fintech">
-      <div class="agent-icon">◈</div>
+      <div class="agent-icon">&#9672;</div>
       <div class="agent-name">RewmoAI</div>
       <div class="agent-tag">Fintech · Banking · Payments</div>
       <div class="agent-desc">Financial AI agents turning everyday payments — rent, loans, mortgages — into rewards that build wealth. Embedded finance for regional banks. Blockchain-ready. $28M raised.</div>
     </div>
 
     <div class="agent-card construction">
-      <div class="agent-icon">▣</div>
+      <div class="agent-icon">&#9635;</div>
       <div class="agent-name">ProjMgt.AI</div>
       <div class="agent-tag">Construction · Infrastructure · Federal</div>
       <div class="agent-desc">AI agents for project scheduling, resource optimization, RFI management, change order tracking, and USACE-compliant quality management on complex builds.</div>
     </div>
 
     <div class="agent-card aviation">
-      <div class="agent-icon">△</div>
+      <div class="agent-icon">&#9651;</div>
       <div class="agent-name">Aviation AI</div>
       <div class="agent-tag">Aviation · Aerospace · Flight Ops</div>
       <div class="agent-desc">Predictive maintenance, crew scheduling, safety compliance, and MRO optimization — built on 40+ years of flight operations from Naval Aviation to theater-level command.</div>
     </div>
 
     <div class="agent-card energy">
-      <div class="agent-icon">◉</div>
+      <div class="agent-icon">&#9673;</div>
       <div class="agent-name">Energy AI</div>
       <div class="agent-tag">Energy · Climate · ESG</div>
       <div class="agent-desc">Carbon tracking, ESG scoring, flare-gas-to-fuel optimization, and clean energy transition planning. Consolidating LeafPAYS, Flare2Fuel, and Greenspar.x into one AI-powered platform.</div>
     </div>
 
     <div class="agent-card defense">
-      <div class="agent-icon">⬡</div>
+      <div class="agent-icon">&#11041;</div>
       <div class="agent-name">Logistics AI</div>
       <div class="agent-tag">Defense · Maritime · Supply Chain</div>
       <div class="agent-desc">Theater-level logistics, fleet optimization, Lean/Six Sigma AI, and military-grade supply chain planning. Born from LOGCAP, Gorgon LNG, and $600M savings methodology.</div>
     </div>
 
     <div class="agent-card security">
-      <div class="agent-icon">◇</div>
+      <div class="agent-icon">&#9671;</div>
       <div class="agent-name">AICM</div>
       <div class="agent-tag">Open Source · Agent Security</div>
       <div class="agent-desc">The security layer that monitors all Centriv agents — and yours. Detects skill-injection attacks, credential theft, and auto-quarantines compromised agents. Free. Open source.</div>
@@ -754,7 +755,7 @@ footer .copy {
 
 <!-- METHODOLOGY -->
 <section class="method-section" id="methodology">
-  <div class="section-label">◆ The Centriv Methodology</div>
+  <div class="section-label">&#9670; The Centriv Methodology</div>
   <h2>Built on Deming. Forged in Combat.</h2>
   <p class="subtitle">Every Centriv agent carries embedded operational doctrine from 40+ years of military service, aviation, and industrial operations.</p>
 
@@ -786,19 +787,19 @@ footer .copy {
 <section class="founder-section" id="founder">
   <div class="founder-card">
     <div class="founder-visual">
-      <div class="credential">⬥ U.S. Marine Corps — Combat Tour, Desert Storm</div>
-      <div class="credential">⬥ U.S. Air Force — Aviation Operations</div>
-      <div class="credential">⬥ ATP Fixed Wing · Commercial Rotor Wing</div>
-      <div class="credential">⬥ Naval Aviation Safety Officer School</div>
-      <div class="credential">⬥ KBR — Director, Theater Aviation ($5.4B)</div>
-      <div class="credential">⬥ Gorgon LNG — Supply Chain, 50+ Vessels</div>
-      <div class="credential">⬥ MBA, Chapman University — Int'l Finance</div>
-      <div class="credential">⬥ Deming · Baldrige · TQL · Lean/Six Sigma</div>
+      <div class="credential">&#11045; U.S. Marine Corps — Combat Tour, Desert Storm</div>
+      <div class="credential">&#11045; U.S. Air Force — Aviation Operations</div>
+      <div class="credential">&#11045; ATP Fixed Wing · Commercial Rotor Wing</div>
+      <div class="credential">&#11045; Naval Aviation Safety Officer School</div>
+      <div class="credential">&#11045; KBR — Director, Theater Aviation ($5.4B)</div>
+      <div class="credential">&#11045; Gorgon LNG — Supply Chain, 50+ Vessels</div>
+      <div class="credential">&#11045; MBA, Chapman University — Int'l Finance</div>
+      <div class="credential">&#11045; Deming · Baldrige · TQL · Lean/Six Sigma</div>
     </div>
     <div class="founder-text">
-      <div class="section-label">◆ Founder</div>
+      <div class="section-label">&#9670; Founder</div>
       <h3>Gary Reinhold</h3>
-      <div class="founder-title">Founder & CEO, Centriv.ai</div>
+      <div class="founder-title">Founder &amp; CEO, Centriv.ai</div>
       <p class="founder-bio">
         40+ years building and leading across military, aviation, construction, energy, and finance. From combat logistics in Desert Storm to managing $5.4 billion programs at KBR, from scheduling 50+ vessels on the Gorgon LNG mega-project to raising $28M for RewmoAI — Gary builds AI agents the way he built everything else: with doctrine, discipline, and domain expertise that no lab can replicate.
       </p>
@@ -808,16 +809,16 @@ footer .copy {
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="section-label">◆ Get Involved</div>
+  <div class="section-label">&#9670; Get Involved</div>
   <h2>The Center is <em>Growing</em></h2>
   <p class="cta-sub">Whether you're an investor, enterprise partner, or developer — Centriv.ai is building the future of domain-expert AI agents.</p>
-  <a href="mailto:gary@centriv.ai" class="cta-btn">Start the Conversation →</a>
+  <a href="mailto:gary@centriv.ai" class="cta-btn">Start the Conversation &#8594;</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="logo">CENTRIV <span>.ai</span></div>
-  <div class="copy">© 2026 Centriv AI. All rights reserved. AICM is open source under MIT license.</div>
+  <div class="copy">&copy; 2026 Centriv AI. All rights reserved. AICM is open source under MIT license.</div>
 </footer>
 
 </body>
