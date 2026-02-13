@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centriv Aviation — AI Agents for Aviation &amp; Aerospace</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg-deep:#0a0c10;--bg-card:#12151c;--bg-card-hover:#181c26;--accent-gold:#c9a84c;--accent-gold-dim:rgba(201,168,76,0.15);--accent-purple:#8b6aed;--accent-purple-dim:rgba(139,106,237,0.12);--text-primary:#e8e4dc;--text-secondary:#8a8680;--text-dim:#5a5650;--border:rgba(201,168,76,0.12);--border-purple:rgba(139,106,237,0.2)}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-deep);color:var(--text-primary);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}h1,h2,h3,.serif{font-family:'DM Serif Display',serif}nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,12,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--accent-gold);letter-spacing:0.05em;text-decoration:none}.logo span{color:var(--text-dim);font-weight:300;font-family:'Outfit',sans-serif;font-size:0.85rem}.nav-links{display:flex;gap:2.5rem}.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}.nav-links a:hover{color:var(--accent-gold)}.nav-cta{display:inline-block;padding:0.6rem 1.5rem;background:transparent;border:1px solid var(--accent-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}.nav-cta:hover{background:var(--accent-gold);color:var(--bg-deep)}.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10rem 2rem 5rem;position:relative}.hero::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(139,106,237,0.06) 0%,transparent 70%);pointer-events:none}.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.2rem;background:var(--accent-purple-dim);border:1px solid rgba(139,106,237,0.3);font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-purple);margin-bottom:2rem;animation:fadeInDown 0.8s ease}.hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;max-width:850px;margin-bottom:1.5rem;animation:fadeInUp 0.8s ease 0.2s both}.hero h1 em{font-style:italic;color:var(--accent-purple)}.hero-sub{font-size:1.1rem;color:var(--text-secondary);max-width:640px;line-height:1.7;font-weight:300;margin-bottom:2rem;animation:fadeInUp 0.8s ease 0.4s both}.back-link{font-size:0.8rem;color:var(--accent-gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;transition:color 0.3s;animation:fadeInUp 0.8s ease 0.6s both}.back-link:hover{color:var(--text-primary)}.section-wrap{max-width:1100px;margin:0 auto;padding:5rem 4rem}.section-label{font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-purple);margin-bottom:1rem}.section-wrap h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}.section-wrap .subtitle{color:var(--text-secondary);max-width:700px;line-height:1.7;font-weight:300;margin-bottom:3rem}.cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.cred-card{background:var(--bg-card);border:1px solid var(--border-purple);padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}.cred-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--accent-purple);opacity:0.5;transition:opacity 0.3s}.cred-card:hover{background:var(--bg-card-hover);transform:translateY(-3px)}.cred-card:hover::before{opacity:1}.cred-card .cred-title{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.5rem}.cred-card .cred-detail{font-size:0.85rem;color:var(--text-secondary);line-height:1.7;font-weight:300}.cred-card .cred-tag{display:inline-block;margin-top:0.75rem;font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-purple);padding:0.25rem 0.6rem;background:var(--accent-purple-dim);border:1px solid rgba(139,106,237,0.2)}.ai-section{padding:5rem 4rem;background:linear-gradient(180deg,transparent 0%,rgba(139,106,237,0.02) 50%,transparent 100%)}.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}.ai-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;text-align:center;transition:all 0.3s}.ai-card:hover{border-color:var(--border-purple);background:var(--bg-card-hover)}.ai-card .ai-icon{font-size:2rem;margin-bottom:0.75rem}.ai-card .ai-title{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.5rem}.ai-card .ai-desc{font-size:0.8rem;color:var(--text-secondary);line-height:1.6;font-weight:300}.timeline-wrap{max-width:900px;margin:0 auto;padding:5rem 4rem}.timeline{position:relative;padding-left:2.5rem}.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--accent-purple),var(--accent-gold))}.timeline-item{position:relative;padding-bottom:2.5rem}.timeline-item::before{content:'';position:absolute;left:-2.5rem;top:0.5rem;width:8px;height:8px;border-radius:50%;background:var(--accent-purple);border:2px solid var(--bg-deep);z-index:1}.timeline-item .t-period{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-purple);margin-bottom:0.3rem}.timeline-item .t-role{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:0.4rem}.timeline-item .t-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.7;font-weight:300}.cta-section{padding:6rem 4rem;text-align:center;position:relative}.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(139,106,237,0.04) 0%,transparent 70%);pointer-events:none}.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);max-width:600px;margin:0 auto 1rem}.cta-section h2 em{font-style:italic;color:var(--accent-purple)}.cta-sub{color:var(--text-secondary);max-width:500px;margin:0 auto 2rem;font-weight:300;line-height:1.7}.cta-btn{display:inline-block;padding:1rem 2.5rem;background:var(--accent-purple);color:#fff;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(139,106,237,0.25)}.cta-secondary{display:inline-block;margin-left:1rem;padding:1rem 2.5rem;background:transparent;border:1px solid var(--accent-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.cta-secondary:hover{background:var(--accent-gold);color:var(--bg-deep)}footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}footer .logo{font-size:1.2rem}footer .copy{font-size:0.75rem;color:var(--text-dim)}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}@media(max-width:900px){nav{padding:1rem 2rem}.nav-links{display:none}.cred-grid,.ai-grid{grid-template-columns:1fr}.section-wrap,.timeline-wrap,.ai-section,.cta-section{padding:3rem 1.5rem !important}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">CENTRIV <span>.ai</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#agents">All Agents</a>
+    <a href="/defense.html">Defense &amp; Logistics</a>
+    <a href="https://www.linkedin.com/in/rewmoai" target="_blank">LinkedIn &#8599;</a>
+  </div>
+  <a href="mailto:gary@centriv.ai" class="nav-cta">Contact</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">&#9651; Centriv Aviation</div>
+  <h1>AI Agents Built on <em>40+ Years</em> of Flight Operations</h1>
+  <p class="hero-sub">From Naval Aviation flight training to ATP multiengine fixed wing, from commercial multiengine rotorcraft to directing theater-level aviation on $5.4B programs — Centriv Aviation agents encode decades of cockpit-earned expertise into intelligent systems.</p>
+  <a href="/" class="back-link">&#8592; Back to centriv.ai</a>
+</section>
+
+<div class="section-wrap">
+  <div class="section-label">&#9651; Flight Credentials</div>
+  <h2>Pilot Certifications &amp; Ratings</h2>
+  <p class="subtitle">Not a consultant who read about aviation — a pilot who's logged thousands of hours across fixed wing and rotary wing aircraft, military and civilian.</p>
+  <div class="cred-grid">
+    <div class="cred-card">
+      <div class="cred-title">ATP — Airline Transport Pilot</div>
+      <div class="cred-detail">Multiengine Fixed Wing. The highest level of aircraft pilot certification issued by the FAA. Requires 1,500+ flight hours, rigorous written and practical examinations, and demonstrated mastery of complex flight operations.</div>
+      <div class="cred-tag">FAA Highest Certificate</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-title">Commercial Pilot — Rotorcraft/Helicopter</div>
+      <div class="cred-detail">Multiengine rotary wing certification. Commercial-level helicopter operations including complex multi-engine rotorcraft, instrument flight, and operations in demanding conditions from offshore to austere environments.</div>
+      <div class="cred-tag">Multiengine Rotorcraft</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-title">Naval Aviation Flight Training</div>
+      <div class="cred-detail">U.S. military flight training pipeline — one of the most selective and demanding aviation programs in the world. Carrier-grade discipline, systems knowledge, and mission planning under extreme conditions.</div>
+      <div class="cred-tag">U.S. Military</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-title">Naval Aviation Safety Officer School</div>
+      <div class="cred-detail">Specialized training in aviation safety management, mishap investigation, risk assessment, and safety culture development. The foundation of systematic risk management applied to every Centriv agent.</div>
+      <div class="cred-tag">Safety &amp; Risk Management</div>
+    </div>
+  </div>
+</div>
+
+<div class="timeline-wrap">
+  <div class="section-label">&#9651; Aviation Operations Career</div>
+  <h2>From Cockpit to Command</h2>
+  <p class="subtitle" style="color:var(--text-secondary);max-width:700px;line-height:1.7;font-weight:300;margin-bottom:3rem;">Each role built the domain expertise that now powers Centriv Aviation AI agents.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="t-period">U.S. Air Force</div>
+      <div class="t-role">Aviation Operations Officer</div>
+      <div class="t-desc">Active duty aviation operations in the U.S. Air Force. Flight operations management, mission planning, crew scheduling, and maintaining operational readiness across complex multi-aircraft environments.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-period">U.S. Marine Corps — Desert Storm</div>
+      <div class="t-role">S-4 Logistics Officer (Combat Tour)</div>
+      <div class="t-desc">Combat logistics under fire in Operation Desert Storm. Managed supply chains, aviation fuel logistics, and equipment readiness in theater. The operational discipline forged here informs every Centriv system.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-period">KBR / LOGCAP III</div>
+      <div class="t-role">Director, Theater Aviation — $5.4B Program</div>
+      <div class="t-desc">Directed all aviation operations for KBR's LOGCAP III contract — one of the largest logistics programs in military history. Managed fixed wing and rotary wing fleets, crew scheduling, maintenance programs, safety compliance, and OCONUS operations supporting 60,000+ logistics operations.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-period">LOGCAP III — Aviation Quality</div>
+      <div class="t-role">Airline Assessments &amp; Safety Audits</div>
+      <div class="t-desc">Conducted airline assessments and safety evaluations for all aviation subcontractors operating under the LOGCAP III theater aviation program. Evaluated maintenance standards, crew qualifications, operational procedures, and regulatory compliance — ensuring every aircraft and operator met military-grade safety requirements.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-period">25+ Years Combined Service</div>
+      <div class="t-role">USMC &amp; USAF — Aviation &amp; Logistics</div>
+      <div class="t-desc">Over 25 years of combined service across the Marine Corps and Air Force. Aviation safety, operational planning, Lean/Six Sigma process optimization, and the Deming-based methodology that now serves as the DNA for all Centriv AI agents.</div>
+    </div>
+  </div>
+</div>
+
+<section class="ai-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label" style="text-align:center;">&#9651; What Centriv Aviation AI Does</div>
+    <h2 style="text-align:center;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;">Domain Expertise Encoded Into Agents</h2>
+    <div class="ai-grid">
+      <div class="ai-card"><div class="ai-icon">&#9651;</div><div class="ai-title">Predictive Maintenance</div><div class="ai-desc">AI agents that predict component failures before they happen — using patterns learned from decades of fleet management across fixed wing and rotary wing aircraft.</div></div>
+      <div class="ai-card"><div class="ai-icon">&#9201;</div><div class="ai-title">Crew Scheduling</div><div class="ai-desc">Intelligent crew scheduling that accounts for duty time limits, qualifications, certifications, fatigue management, and operational tempo — the same complexity managed at theater scale.</div></div>
+      <div class="ai-card"><div class="ai-icon">&#9888;</div><div class="ai-title">Safety Compliance</div><div class="ai-desc">Automated safety monitoring, incident tracking, risk assessment, and regulatory compliance — built on Naval Aviation Safety Officer School methodology and airline assessment experience.</div></div>
+      <div class="ai-card"><div class="ai-icon">&#9881;</div><div class="ai-title">MRO Optimization</div><div class="ai-desc">Maintenance, Repair, and Overhaul intelligence that optimizes turnaround times, parts inventory, and work order scheduling using Lean/Six Sigma principles proven on $5.4B programs.</div></div>
+      <div class="ai-card"><div class="ai-icon">&#9670;</div><div class="ai-title">Fleet Intelligence</div><div class="ai-desc">Real-time fleet visibility, utilization tracking, and operational planning — from single aircraft operators to theater-level multi-fleet environments.</div></div>
+      <div class="ai-card"><div class="ai-icon">&#9635;</div><div class="ai-title">Airline Assessment AI</div><div class="ai-desc">AI-powered operator evaluation and audit tools — automating the airline assessment methodology developed for LOGCAP III subcontractor qualification and ongoing compliance monitoring.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label">&#9651; Let's Talk Aviation</div>
+  <h2>Built in the <em>Cockpit</em>, Not the Lab</h2>
+  <p class="cta-sub">Whether you're an airline, MRO, defense contractor, or aviation startup — Centriv Aviation agents bring domain expertise that no generalist AI can match.</p>
+  <a href="mailto:gary@centriv.ai" class="cta-btn">Start the Conversation &#8594;</a>
+  <a href="https://www.linkedin.com/in/rewmoai" target="_blank" class="cta-secondary">View LinkedIn &#8599;</a>
+</section>
+
+<footer>
+  <a href="/" class="logo">CENTRIV <span>.ai</span></a>
+  <div class="copy">&copy; 2026 Centriv AI. All rights reserved.</div>
+</footer>
+</body>
+</html>

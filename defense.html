@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centriv Command — AI Agents for Defense &amp; Logistics</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg-deep:#0a0c10;--bg-card:#12151c;--bg-card-hover:#181c26;--accent-gold:#c9a84c;--accent-gold-dim:rgba(201,168,76,0.15);--accent-red:#e85d4a;--accent-red-dim:rgba(232,93,74,0.12);--text-primary:#e8e4dc;--text-secondary:#8a8680;--text-dim:#5a5650;--border:rgba(201,168,76,0.12);--border-red:rgba(232,93,74,0.2)}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-deep);color:var(--text-primary);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}h1,h2,h3,.serif{font-family:'DM Serif Display',serif}nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,12,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--accent-gold);letter-spacing:0.05em;text-decoration:none}.logo span{color:var(--text-dim);font-weight:300;font-family:'Outfit',sans-serif;font-size:0.85rem}.nav-links{display:flex;gap:2.5rem}.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}.nav-links a:hover{color:var(--accent-gold)}.nav-cta{display:inline-block;padding:0.6rem 1.5rem;background:transparent;border:1px solid var(--accent-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}.nav-cta:hover{background:var(--accent-gold);color:var(--bg-deep)}.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10rem 2rem 5rem;position:relative}.hero::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(232,93,74,0.06) 0%,transparent 70%);pointer-events:none}.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.2rem;background:var(--accent-red-dim);border:1px solid rgba(232,93,74,0.3);font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-red);margin-bottom:2rem;animation:fadeInDown 0.8s ease}.hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;max-width:850px;margin-bottom:1.5rem;animation:fadeInUp 0.8s ease 0.2s both}.hero h1 em{font-style:italic;color:var(--accent-red)}.hero-sub{font-size:1.1rem;color:var(--text-secondary);max-width:640px;line-height:1.7;font-weight:300;margin-bottom:2rem;animation:fadeInUp 0.8s ease 0.4s both}.back-link{font-size:0.8rem;color:var(--accent-gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;transition:color 0.3s;animation:fadeInUp 0.8s ease 0.6s both}.back-link:hover{color:var(--text-primary)}
+
+/* STATS BAR */
+.stats-bar{display:flex;justify-content:center;gap:4rem;padding:3rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:1100px;margin:0 auto}.stat{text-align:center}.stat .num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent-red)}.stat .label{font-size:0.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.12em;margin-top:0.25rem}
+
+.section-wrap{max-width:1100px;margin:0 auto;padding:5rem 4rem}.section-label{font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-red);margin-bottom:1rem}.section-wrap h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}.section-wrap .subtitle{color:var(--text-secondary);max-width:700px;line-height:1.7;font-weight:300;margin-bottom:3rem}
+
+/* PROGRAM CARDS */
+.program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.program-card{background:var(--bg-card);border:1px solid var(--border-red);padding:2.5rem;transition:all 0.3s;position:relative;overflow:hidden}.program-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--accent-red);opacity:0.5;transition:opacity 0.3s}.program-card:hover{background:var(--bg-card-hover);transform:translateY(-3px)}.program-card:hover::before{opacity:1}.program-card .p-title{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:0.3rem}.program-card .p-subtitle{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-red);margin-bottom:0.75rem}.program-card .p-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.7;font-weight:300}.program-card .p-stat{display:inline-block;margin-top:1rem;font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--accent-gold)}
+
+/* METHODOLOGY */
+.method-section{padding:5rem 4rem;background:linear-gradient(180deg,transparent 0%,rgba(232,93,74,0.02) 50%,transparent 100%)}.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}.method-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;text-align:center;transition:all 0.3s}.method-card:hover{border-color:var(--border-red);background:var(--bg-card-hover)}.method-card .m-icon{font-size:2rem;margin-bottom:0.75rem}.method-card .m-title{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.5rem}.method-card .m-desc{font-size:0.8rem;color:var(--text-secondary);line-height:1.6;font-weight:300}
+
+/* AI CAPABILITIES */
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.ai-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;text-align:center;transition:all 0.3s}.ai-card:hover{border-color:var(--border-red);background:var(--bg-card-hover)}.ai-card .ai-icon{font-size:2rem;margin-bottom:0.75rem}.ai-card .ai-title{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.5rem}.ai-card .ai-desc{font-size:0.8rem;color:var(--text-secondary);line-height:1.6;font-weight:300}
+
+.cta-section{padding:6rem 4rem;text-align:center;position:relative}.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(232,93,74,0.04) 0%,transparent 70%);pointer-events:none}.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);max-width:600px;margin:0 auto 1rem}.cta-section h2 em{font-style:italic;color:var(--accent-red)}.cta-sub{color:var(--text-secondary);max-width:500px;margin:0 auto 2rem;font-weight:300;line-height:1.7}.cta-btn{display:inline-block;padding:1rem 2.5rem;background:var(--accent-red);color:#fff;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(232,93,74,0.25)}.cta-secondary{display:inline-block;margin-left:1rem;padding:1rem 2.5rem;background:transparent;border:1px solid var(--accent-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.cta-secondary:hover{background:var(--accent-gold);color:var(--bg-deep)}footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}footer .logo{font-size:1.2rem}footer .copy{font-size:0.75rem;color:var(--text-dim)}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}@media(max-width:900px){nav{padding:1rem 2rem}.nav-links{display:none}.program-grid,.ai-grid,.method-grid{grid-template-columns:1fr}.stats-bar{flex-direction:column;gap:1.5rem}.section-wrap,.method-section,.cta-section{padding:3rem 1.5rem !important}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">CENTRIV <span>.ai</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#agents">All Agents</a>
+    <a href="/aviation.html">Aviation</a>
+    <a href="https://www.linkedin.com/in/rewmoai" target="_blank">LinkedIn &#8599;</a>
+  </div>
+  <a href="mailto:gary@centriv.ai" class="nav-cta">Contact</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">&#11041; Centriv Command</div>
+  <h1>AI Agents Forged in <em>Combat Logistics</em></h1>
+  <p class="hero-sub">From Desert Storm supply chains under fire to directing 60,000+ logistics operations on LOGCAP III, from scheduling 50+ vessels on Gorgon LNG to projecting $600M in savings through Lean/Six Sigma — Centriv Command agents carry battle-tested operational doctrine.</p>
+  <a href="/" class="back-link">&#8592; Back to centriv.ai</a>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="num">$5.4B</div><div class="label">Programs Managed</div></div>
+  <div class="stat"><div class="num">60K+</div><div class="label">Logistics Operations</div></div>
+  <div class="stat"><div class="num">50+</div><div class="label">Vessels Scheduled</div></div>
+  <div class="stat"><div class="num">$600M</div><div class="label">Projected Savings</div></div>
+  <div class="stat"><div class="num">25+</div><div class="label">Years Military Service</div></div>
+</div>
+
+<div class="section-wrap">
+  <div class="section-label">&#11041; Operational Foundation</div>
+  <h2>Programs That Built the Doctrine</h2>
+  <p class="subtitle">Every Centriv Command agent carries the DNA of real programs — managed under pressure, at scale, in the world's most demanding operational environments.</p>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="p-title">Operation Desert Storm</div>
+      <div class="p-subtitle">USMC · S-4 Logistics Officer · Combat Tour</div>
+      <div class="p-desc">First combat tour as a Marine Corps S-4 Logistics Officer during Operation Desert Storm. Managed forward supply chains, equipment readiness, ammunition logistics, and fuel distribution under active combat conditions. The operational urgency and discipline forged here became the foundation for everything that followed.</div>
+    </div>
+    <div class="program-card">
+      <div class="p-title">LOGCAP III — KBR</div>
+      <div class="p-subtitle">Director, Theater Aviation · $5.4B Program</div>
+      <div class="p-desc">Directed operations on one of the largest logistics support contracts in U.S. military history. Managed theater-wide aviation operations, supply chain logistics, subcontractor coordination, and operational readiness supporting 60,000+ logistics operations across multiple OCONUS theaters.</div>
+      <div class="p-stat">$2.5B+ logistics value</div>
+    </div>
+    <div class="program-card">
+      <div class="p-title">Gorgon LNG — Chevron</div>
+      <div class="p-subtitle">Supply Chain &amp; Maritime Logistics</div>
+      <div class="p-desc">Managed supply chain and vessel scheduling for one of the world's largest natural gas projects on Barrow Island, Australia. Coordinated 50+ vessel movements, port scheduling, customs, quarantine compliance, and material delivery to a remote island construction site with zero margin for error.</div>
+      <div class="p-stat">50+ vessels coordinated</div>
+    </div>
+    <div class="program-card">
+      <div class="p-title">Lean/Six Sigma Right-Sizing</div>
+      <div class="p-subtitle">$600M Projected Savings Methodology</div>
+      <div class="p-desc">Developed and implemented Lean/Six Sigma right-sizing methodology across large-scale logistics operations, projecting $600M in savings. Applied Kaizen continuous improvement, statistical process control, and waste elimination — the same methodology now embedded in Centriv Command AI agents.</div>
+      <div class="p-stat">$600M savings projected</div>
+    </div>
+  </div>
+</div>
+
+<section class="method-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label" style="text-align:center;">&#11041; Military-Rooted Methodology</div>
+    <h2 style="text-align:center;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;">The Doctrine Behind the Agents</h2>
+    <div class="method-grid">
+      <div class="method-card"><div class="m-icon">&#9670;</div><div class="m-title">Deming &amp; TQL</div><div class="m-desc">DoD Total Quality Leadership, direct Deming seminar attendance, and the Baldrige Award Assessment framework — systematic quality management applied to AI agent design.</div></div>
+      <div class="method-card"><div class="m-icon">&#9635;</div><div class="m-title">The Reinhold Model</div><div class="m-desc">Cross-functional process interaction framework designed at HQMC that informed MCO 5311.1C. Now applied to multi-agent AI system architecture and inter-agent communication.</div></div>
+      <div class="method-card"><div class="m-icon">&#9881;</div><div class="m-title">Lean / Kaizen / Six Sigma</div><div class="m-desc">Statistical process control, waste elimination, and continuous improvement — proven across $5.4B programs and now embedded as operational DNA in every logistics AI agent.</div></div>
+      <div class="method-card"><div class="m-icon">&#11041;</div><div class="m-title">Combat Logistics</div><div class="m-desc">Supply chains planned and executed under fire during Desert Storm. There is no better test of a logistics methodology than combat — and that discipline lives in every Centriv agent.</div></div>
+      <div class="method-card"><div class="m-icon">&#9888;</div><div class="m-title">Aviation Safety Discipline</div><div class="m-desc">Naval Aviation Safety Officer School methodology — systematic risk management, mishap investigation frameworks, and safety culture development applied to AI agent reliability.</div></div>
+      <div class="method-card"><div class="m-icon">&#9672;</div><div class="m-title">Federal Compliance</div><div class="m-desc">USACE Quality Management, 8a IDIQ MACC, Acquisition Professional Level 1, and MCCPIP continuous improvement — navigating federal regulatory frameworks is built into the DNA.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-wrap">
+  <div class="section-label">&#11041; What Centriv Command AI Does</div>
+  <h2>Operational Intelligence at Scale</h2>
+  <p class="subtitle">AI agents that understand the difference between logistics theory and logistics under pressure.</p>
+  <div class="ai-grid">
+    <div class="ai-card"><div class="ai-icon">&#11041;</div><div class="ai-title">Theater-Level Logistics</div><div class="ai-desc">End-to-end supply chain planning for complex, multi-site operations — from forward operating bases to global maritime shipping routes. Built on LOGCAP-scale experience.</div></div>
+    <div class="ai-card"><div class="ai-icon">&#9875;</div><div class="ai-title">Fleet &amp; Vessel Scheduling</div><div class="ai-desc">AI-powered vessel coordination, port scheduling, and maritime logistics — the same complexity managed across 50+ vessels on the Gorgon LNG mega-project.</div></div>
+    <div class="ai-card"><div class="ai-icon">&#9881;</div><div class="ai-title">Lean/Six Sigma AI</div><div class="ai-desc">Automated waste identification, process optimization, and right-sizing recommendations — encoding the $600M savings methodology into continuously learning agents.</div></div>
+    <div class="ai-card"><div class="ai-icon">&#9670;</div><div class="ai-title">Supply Chain Optimization</div><div class="ai-desc">Demand forecasting, inventory optimization, supplier coordination, and disruption planning — built for the complexity of defense, energy, and industrial supply chains.</div></div>
+    <div class="ai-card"><div class="ai-icon">&#9635;</div><div class="ai-title">Program Management AI</div><div class="ai-desc">Schedule optimization, resource allocation, risk tracking, and milestone management for billion-dollar programs with thousands of moving parts.</div></div>
+    <div class="ai-card"><div class="ai-icon">&#9888;</div><div class="ai-title">Compliance &amp; Readiness</div><div class="ai-desc">Automated compliance monitoring, readiness reporting, and regulatory tracking — ensuring operations meet military, federal, and international standards at all times.</div></div>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="section-label">&#11041; Ready to Deploy</div>
+  <h2>Logistics AI Built <em>Under Fire</em></h2>
+  <p class="cta-sub">Whether you're managing defense supply chains, maritime logistics, or industrial operations at scale — Centriv Command agents carry doctrine no competitor can replicate.</p>
+  <a href="mailto:gary@centriv.ai" class="cta-btn">Start the Conversation &#8594;</a>
+  <a href="https://www.linkedin.com/in/rewmoai" target="_blank" class="cta-secondary">View LinkedIn &#8599;</a>
+</section>
+
+<footer>
+  <a href="/" class="logo">CENTRIV <span>.ai</span></a>
+  <div class="copy">&copy; 2026 Centriv AI. All rights reserved.</div>
+</footer>
+</body>
+</html>
