@@ -6,622 +6,10 @@
 <title>Centriv.ai — Domain-Expert AI Agents for Regulated Industries</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg-deep: #0a0c10;
-  --bg-card: #12151c;
-  --bg-card-hover: #181c26;
-  --accent-gold: #c9a84c;
-  --accent-gold-dim: rgba(201,168,76,0.15);
-  --accent-blue: #4a8eff;
-  --accent-cyan: #3dd8c5;
-  --accent-red: #e85d4a;
-  --accent-purple: #8b6aed;
-  --accent-orange: #e89b3e;
-  --accent-green: #5bc77a;
-  --text-primary: #e8e4dc;
-  --text-secondary: #8a8680;
-  --text-dim: #5a5650;
-  --border: rgba(201,168,76,0.12);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: var(--bg-deep);
-  color: var(--text-primary);
-  font-family: 'Outfit', sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* NOISE TEXTURE OVERLAY */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-}
-
-h1, h2, h3, .serif { font-family: 'DM Serif Display', serif; }
-
-/* NAV */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 1.5rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(10,12,16,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-
-.logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.5rem;
-  color: var(--accent-gold);
-  letter-spacing: 0.05em;
-}
-
-.logo span { color: var(--text-dim); font-weight: 300; font-family: 'Outfit', sans-serif; font-size: 0.85rem; }
-
-.nav-links { display: flex; gap: 2.5rem; }
-.nav-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--accent-gold); }
-
-.nav-cta {
-  display: inline-block;
-  padding: 0.6rem 1.5rem;
-  background: transparent;
-  border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.nav-cta:hover { background: var(--accent-gold); color: var(--bg-deep); }
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 8rem 2rem 4rem;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.2rem;
-  background: var(--accent-gold-dim);
-  border: 1px solid rgba(201,168,76,0.25);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-  margin-bottom: 2rem;
-  animation: fadeInDown 0.8s ease;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-  line-height: 1.1;
-  max-width: 900px;
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease 0.2s both;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--accent-gold);
-}
-
-.hero-sub {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  max-width: 640px;
-  line-height: 1.7;
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-  animation: fadeInUp 0.8s ease 0.4s both;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  margin-top: 1rem;
-  animation: fadeInUp 0.8s ease 0.6s both;
-}
-
-.hero-stat { text-align: center; }
-.hero-stat .num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2rem;
-  color: var(--accent-gold);
-}
-.hero-stat .label {
-  font-size: 0.7rem;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-top: 0.25rem;
-}
-
-/* VENN SECTION */
-.venn-section {
-  padding: 6rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-  margin-bottom: 1rem;
-}
-
-.venn-section h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  text-align: center;
-  max-width: 700px;
-  margin-bottom: 1rem;
-}
-
-.venn-section .subtitle {
-  color: var(--text-secondary);
-  text-align: center;
-  max-width: 600px;
-  line-height: 1.7;
-  font-weight: 300;
-  margin-bottom: 4rem;
-}
-
-/* INTERACTIVE VENN */
-.venn-container {
-  position: relative;
-  width: 620px;
-  height: 620px;
-  margin: 0 auto 3rem;
-}
-
-.venn-circle {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 1.5px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  cursor: pointer;
-  background: rgba(10,12,16,0.6);
-  backdrop-filter: blur(5px);
-}
-
-.venn-circle:hover {
-  transform: scale(1.05);
-  z-index: 10;
-}
-
-.venn-circle .icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
-.venn-circle .name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 0.95rem;
-  text-align: center;
-  padding: 0 1.5rem;
-}
-.venn-circle .sub {
-  font-size: 0.65rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 0.25rem;
-}
-
-/* Outer ring - Industry Verticals */
-.vc-fintech { top: 0; left: 50%; transform: translateX(-50%); border-color: var(--accent-blue); }
-.vc-fintech:hover { box-shadow: 0 0 40px rgba(74,142,255,0.15); }
-
-.vc-construction { top: 25%; right: 0; border-color: var(--accent-orange); }
-.vc-construction:hover { box-shadow: 0 0 40px rgba(232,155,62,0.15); }
-
-.vc-energy { bottom: 0; right: 10%; border-color: var(--accent-green); }
-.vc-energy:hover { box-shadow: 0 0 40px rgba(91,199,122,0.15); }
-
-.vc-defense { bottom: 0; left: 10%; border-color: var(--accent-red); }
-.vc-defense:hover { box-shadow: 0 0 40px rgba(232,93,74,0.15); }
-
-.vc-aviation { top: 25%; left: 0; border-color: var(--accent-purple); }
-.vc-aviation:hover { box-shadow: 0 0 40px rgba(139,106,237,0.15); }
-
-/* CENTER - Profound Knowledge */
-.venn-center {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 180px; height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, rgba(201,168,76,0.05) 70%);
-  border: 2px solid var(--accent-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 20;
-  animation: pulse-glow 3s ease-in-out infinite;
-  cursor: pointer;
-}
-
-.venn-center .core-label {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1rem;
-  color: var(--accent-gold);
-  text-align: center;
-  line-height: 1.3;
-}
-.venn-center .core-sub {
-  font-size: 0.6rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-top: 0.3rem;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 30px rgba(201,168,76,0.1), 0 0 60px rgba(201,168,76,0.05); }
-  50% { box-shadow: 0 0 50px rgba(201,168,76,0.2), 0 0 100px rgba(201,168,76,0.1); }
-}
-
-.venn-description {
-  max-width: 700px;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.venn-description strong { color: var(--accent-gold); font-weight: 500; font-style: normal; }
-
-/* AGENTS GRID */
-.agents-section {
-  padding: 6rem 4rem;
-}
-
-.agents-section h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.agents-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.agent-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 2rem;
-  transition: all 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-.agent-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 3px;
-  transition: opacity 0.4s;
-  opacity: 0.6;
-}
-
-.agent-card:hover {
-  background: var(--bg-card-hover);
-  border-color: rgba(201,168,76,0.25);
-  transform: translateY(-4px);
-}
-
-.agent-card:hover::before { opacity: 1; }
-
-.agent-card.fintech::before { background: var(--accent-blue); }
-.agent-card.construction::before { background: var(--accent-orange); }
-.agent-card.energy::before { background: var(--accent-green); }
-.agent-card.defense::before { background: var(--accent-red); }
-.agent-card.aviation::before { background: var(--accent-purple); }
-.agent-card.security::before { background: var(--accent-gold); }
-
-.agent-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-.agent-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-}
-.agent-tag {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 1rem;
-}
-.agent-card.fintech .agent-tag { color: var(--accent-blue); }
-.agent-card.construction .agent-tag { color: var(--accent-orange); }
-.agent-card.energy .agent-tag { color: var(--accent-green); }
-.agent-card.defense .agent-tag { color: var(--accent-red); }
-.agent-card.aviation .agent-tag { color: var(--accent-purple); }
-.agent-card.security .agent-tag { color: var(--accent-gold); }
-
-.agent-desc {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-/* METHODOLOGY */
-.method-section {
-  padding: 6rem 4rem;
-  background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.02) 50%, transparent 100%);
-}
-
-.method-section h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.method-section .subtitle {
-  color: var(--text-secondary);
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3.5rem;
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.method-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  max-width: 1100px;
-  margin: 0 auto;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.method-item {
-  background: var(--bg-deep);
-  padding: 2rem;
-  text-align: center;
-  transition: background 0.3s;
-}
-
-.method-item:hover { background: var(--bg-card); }
-
-.method-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2.5rem;
-  color: var(--accent-gold);
-  opacity: 0.3;
-  margin-bottom: 0.5rem;
-}
-
-.method-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.method-desc {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-/* FOUNDER */
-.founder-section {
-  padding: 6rem 4rem;
-  display: flex;
-  justify-content: center;
-}
-
-.founder-card {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  max-width: 900px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 3rem;
-  align-items: center;
-}
-
-.founder-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.credential {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  padding: 0.5rem 0.75rem;
-  background: rgba(201,168,76,0.05);
-  border-left: 2px solid var(--accent-gold);
-}
-
-.founder-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.founder-title {
-  color: var(--accent-gold);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-.founder-bio {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-/* CTA */
-.cta-section {
-  padding: 8rem 4rem;
-  text-align: center;
-  position: relative;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cta-section h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
-}
-
-.cta-section h2 em { font-style: italic; color: var(--accent-gold); }
-
-.cta-sub {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  max-width: 500px;
-  margin: 0 auto 2.5rem;
-  font-weight: 300;
-  line-height: 1.7;
-}
-
-.cta-btn {
-  display: inline-block;
-  padding: 1rem 3rem;
-  background: var(--accent-gold);
-  color: var(--bg-deep);
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.cta-btn:hover {
-  background: #dbb85c;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(201,168,76,0.2);
-}
-
-/* FOOTER */
-footer {
-  padding: 3rem 4rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer .logo { font-size: 1.2rem; }
-footer .copy {
-  font-size: 0.75rem;
-  color: var(--text-dim);
-}
-
-/* ANIMATIONS */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  nav { padding: 1rem 2rem; }
-  .nav-links { display: none; }
-  .agents-grid { grid-template-columns: 1fr; }
-  .method-grid { grid-template-columns: repeat(2, 1fr); }
-  .founder-card { grid-template-columns: 1fr; }
-  .venn-container { width: 360px; height: 360px; }
-  .venn-circle { width: 160px; height: 160px; }
-  .venn-circle .name { font-size: 0.75rem; }
-  .venn-center { width: 120px; height: 120px; }
-  .venn-center .core-label { font-size: 0.8rem; }
-  .hero-stats { flex-direction: column; gap: 1.5rem; }
-  section { padding: 4rem 1.5rem !important; }
-}
+:root{--bg-deep:#0a0c10;--bg-card:#12151c;--bg-card-hover:#181c26;--accent-gold:#c9a84c;--accent-gold-dim:rgba(201,168,76,0.15);--accent-blue:#4a8eff;--accent-cyan:#3dd8c5;--accent-red:#e85d4a;--accent-purple:#8b6aed;--accent-orange:#e89b3e;--accent-green:#5bc77a;--text-primary:#e8e4dc;--text-secondary:#8a8680;--text-dim:#5a5650;--border:rgba(201,168,76,0.12)}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-deep);color:var(--text-primary);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}h1,h2,h3,.serif{font-family:'DM Serif Display',serif}nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,12,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--accent-gold);letter-spacing:0.05em}.logo span{color:var(--text-dim);font-weight:300;font-family:'Outfit',sans-serif;font-size:0.85rem}.nav-links{display:flex;gap:2.5rem}.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}.nav-links a:hover{color:var(--accent-gold)}.nav-cta{display:inline-block;padding:0.6rem 1.5rem;background:transparent;border:1px solid var(--accent-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}.nav-cta:hover{background:var(--accent-gold);color:var(--bg-deep)}.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative}.hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none}.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.2rem;background:var(--accent-gold-dim);border:1px solid rgba(201,168,76,0.25);font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:2rem;animation:fadeInDown 0.8s ease}.hero h1{font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:1.1;max-width:900px;margin-bottom:1.5rem;animation:fadeInUp 0.8s ease 0.2s both}.hero h1 em{font-style:italic;color:var(--accent-gold)}.hero-sub{font-size:1.15rem;color:var(--text-secondary);max-width:640px;line-height:1.7;font-weight:300;margin-bottom:2.5rem;animation:fadeInUp 0.8s ease 0.4s both}.hero-stats{display:flex;gap:3rem;margin-top:1rem;animation:fadeInUp 0.8s ease 0.6s both}.hero-stat{text-align:center}.hero-stat .num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent-gold)}.hero-stat .label{font-size:0.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.12em;margin-top:0.25rem}.venn-section{padding:6rem 4rem;display:flex;flex-direction:column;align-items:center;position:relative}.section-label{font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:1rem}.venn-section h2{font-size:clamp(2rem,3.5vw,3rem);text-align:center;max-width:700px;margin-bottom:1rem}.venn-section .subtitle{color:var(--text-secondary);text-align:center;max-width:600px;line-height:1.7;font-weight:300;margin-bottom:4rem}.venn-container{position:relative;width:620px;height:620px;margin:0 auto 3rem}.venn-circle{position:absolute;width:280px;height:280px;border-radius:50%;border:1.5px solid;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:all 0.6s cubic-bezier(0.25,0.46,0.45,0.94);cursor:pointer;background:rgba(10,12,16,0.6);backdrop-filter:blur(5px)}.venn-circle:hover{transform:scale(1.05);z-index:10}.venn-circle .icon{font-size:1.8rem;margin-bottom:0.4rem}.venn-circle .name{font-family:'DM Serif Display',serif;font-size:0.95rem;text-align:center;padding:0 1.5rem}.venn-circle .sub{font-size:0.65rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem}.vc-fintech{top:0;left:50%;transform:translateX(-50%);border-color:var(--accent-blue)}.vc-fintech:hover{box-shadow:0 0 40px rgba(74,142,255,0.15)}.vc-construction{top:25%;right:0;border-color:var(--accent-orange)}.vc-construction:hover{box-shadow:0 0 40px rgba(232,155,62,0.15)}.vc-energy{bottom:0;right:10%;border-color:var(--accent-green)}.vc-energy:hover{box-shadow:0 0 40px rgba(91,199,122,0.15)}.vc-defense{bottom:0;left:10%;border-color:var(--accent-red)}.vc-defense:hover{box-shadow:0 0 40px rgba(232,93,74,0.15)}.vc-aviation{top:25%;left:0;border-color:var(--accent-purple)}.vc-aviation:hover{box-shadow:0 0 40px rgba(139,106,237,0.15)}.venn-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.25) 0%,rgba(201,168,76,0.05) 70%);border:2px solid var(--accent-gold);display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:20;animation:pulse-glow 3s ease-in-out infinite;cursor:pointer}.venn-center .core-label{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--accent-gold);text-align:center;line-height:1.3}.venn-center .core-sub{font-size:0.6rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.15em;margin-top:0.3rem}@keyframes pulse-glow{0%,100%{box-shadow:0 0 30px rgba(201,168,76,0.1),0 0 60px rgba(201,168,76,0.05)}50%{box-shadow:0 0 50px rgba(201,168,76,0.2),0 0 100px rgba(201,168,76,0.1)}}.venn-description{max-width:700px;text-align:center;color:var(--text-secondary);font-size:0.95rem;line-height:1.8;font-weight:300;font-style:italic}.venn-description strong{color:var(--accent-gold);font-weight:500;font-style:normal}.agents-section{padding:6rem 4rem}.agents-section h2{font-size:clamp(2rem,3.5vw,3rem);text-align:center;margin-bottom:3.5rem}.agents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}.agent-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;transition:all 0.4s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block}.agent-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;transition:opacity 0.4s;opacity:0.6}.agent-card:hover{background:var(--bg-card-hover);border-color:rgba(201,168,76,0.25);transform:translateY(-4px)}.agent-card:hover::before{opacity:1}.agent-card.fintech::before{background:var(--accent-blue)}.agent-card.construction::before{background:var(--accent-orange)}.agent-card.energy::before{background:var(--accent-green)}.agent-card.defense::before{background:var(--accent-red)}.agent-card.aviation::before{background:var(--accent-purple)}.agent-card.security::before{background:var(--accent-gold)}.agent-icon{font-size:1.5rem;margin-bottom:1rem}.agent-name{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:0.3rem}.agent-tag{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem}.agent-card.fintech .agent-tag{color:var(--accent-blue)}.agent-card.construction .agent-tag{color:var(--accent-orange)}.agent-card.energy .agent-tag{color:var(--accent-green)}.agent-card.defense .agent-tag{color:var(--accent-red)}.agent-card.aviation .agent-tag{color:var(--accent-purple)}.agent-card.security .agent-tag{color:var(--accent-gold)}.agent-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.6;font-weight:300}.agent-link{display:inline-block;margin-top:1rem;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-gold);opacity:0;transform:translateX(-5px);transition:all 0.3s}.agent-card:hover .agent-link{opacity:1;transform:translateX(0)}.method-section{padding:6rem 4rem;background:linear-gradient(180deg,transparent 0%,rgba(201,168,76,0.02) 50%,transparent 100%)}.method-section h2{font-size:clamp(2rem,3.5vw,3rem);text-align:center;margin-bottom:1rem}.method-section .subtitle{color:var(--text-secondary);text-align:center;max-width:600px;margin:0 auto 3.5rem;line-height:1.7;font-weight:300}.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;max-width:1100px;margin:0 auto;background:var(--border);border:1px solid var(--border)}.method-item{background:var(--bg-deep);padding:2rem;text-align:center;transition:background 0.3s}.method-item:hover{background:var(--bg-card)}.method-num{font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--accent-gold);opacity:0.3;margin-bottom:0.5rem}.method-title{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.5rem}.method-desc{font-size:0.8rem;color:var(--text-secondary);line-height:1.6;font-weight:300}.founder-section{padding:6rem 4rem;display:flex;justify-content:center}.founder-card{display:grid;grid-template-columns:1fr 2fr;gap:3rem;max-width:900px;background:var(--bg-card);border:1px solid var(--border);padding:3rem;align-items:center}.founder-visual{display:flex;flex-direction:column;gap:0.75rem}.credential{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--text-secondary);padding:0.5rem 0.75rem;background:rgba(201,168,76,0.05);border-left:2px solid var(--accent-gold)}.founder-text h3{font-size:1.8rem;margin-bottom:0.5rem}.founder-title{color:var(--accent-gold);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem}.founder-bio{color:var(--text-secondary);font-size:0.9rem;line-height:1.8;font-weight:300}.cta-section{padding:8rem 4rem;text-align:center;position:relative}.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.05) 0%,transparent 70%);pointer-events:none}.cta-section h2{font-size:clamp(2rem,4vw,3.5rem);max-width:700px;margin:0 auto 1.5rem}.cta-section h2 em{font-style:italic;color:var(--accent-gold)}.cta-sub{color:var(--text-secondary);font-size:1rem;max-width:500px;margin:0 auto 2.5rem;font-weight:300;line-height:1.7}.cta-btn{display:inline-block;padding:1rem 3rem;background:var(--accent-gold);color:var(--bg-deep);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s}.cta-btn:hover{background:#dbb85c;transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,0.2)}footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}footer .logo{font-size:1.2rem}footer .copy{font-size:0.75rem;color:var(--text-dim)}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}@media(max-width:900px){nav{padding:1rem 2rem}.nav-links{display:none}.agents-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}.founder-card{grid-template-columns:1fr}.venn-container{width:360px;height:360px}.venn-circle{width:160px;height:160px}.venn-circle .name{font-size:0.75rem}.venn-center{width:120px;height:120px}.venn-center .core-label{font-size:0.8rem}.hero-stats{flex-direction:column;gap:1.5rem}section{padding:4rem 1.5rem !important}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="logo">CENTRIV <span>.ai</span></div>
   <div class="nav-links">
@@ -633,157 +21,90 @@ footer .copy {
   </div>
   <a href="mailto:gary@centriv.ai" class="nav-cta">Contact</a>
 </nav>
-
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge">&#9670; Domain-Expert AI Agents for Regulated Industries</div>
   <h1>The <em>Profound Center</em> of Industrial AI</h1>
   <p class="hero-sub">We build AI agents for asset-heavy industries — fintech, construction, energy, aviation, defense &amp; logistics — all secured by AICM, our open-source agent integrity monitor for regulated environments.</p>
   <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="num">40+</div>
-      <div class="label">Years Experience</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">6</div>
-      <div class="label">Industry Verticals</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">$5.4B</div>
-      <div class="label">Programs Managed</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">OSS</div>
-      <div class="label">AICM Security Layer</div>
-    </div>
+    <div class="hero-stat"><div class="num">40+</div><div class="label">Years Experience</div></div>
+    <div class="hero-stat"><div class="num">6</div><div class="label">Industry Verticals</div></div>
+    <div class="hero-stat"><div class="num">$5.4B</div><div class="label">Programs Managed</div></div>
+    <div class="hero-stat"><div class="num">OSS</div><div class="label">AICM Security Layer</div></div>
   </div>
 </section>
-
-<!-- DEMING VENN -->
 <section class="venn-section" id="philosophy">
   <div class="section-label">&#9670; Our Philosophy</div>
   <h2>Profound Knowledge Grows at the Center</h2>
   <p class="subtitle">Inspired by Deming's System of Profound Knowledge — as domain expertise deepens in each vertical, the convergent center expands, making every agent stronger.</p>
-
   <div class="venn-container">
-    <div class="venn-circle vc-fintech">
-      <div class="icon">&#9672;</div>
-      <div class="name">Fintech &amp; Banking</div>
-      <div class="sub">RewmoAI</div>
-    </div>
-    <div class="venn-circle vc-construction">
-      <div class="icon">&#9635;</div>
-      <div class="name">Construction &amp; Infrastructure</div>
-      <div class="sub">ProjMgt.AI</div>
-    </div>
-    <div class="venn-circle vc-energy">
-      <div class="icon">&#9673;</div>
-      <div class="name">Energy &amp; Climate</div>
-      <div class="sub">LeafPAYS · Greenspar.x</div>
-    </div>
-    <div class="venn-circle vc-defense">
-      <div class="icon">&#11041;</div>
-      <div class="name">Defense &amp; Logistics</div>
-      <div class="sub">Supply Chain AI</div>
-    </div>
-    <div class="venn-circle vc-aviation">
-      <div class="icon">&#9651;</div>
-      <div class="name">Aviation &amp; Aerospace</div>
-      <div class="sub">40+ Years Flight Ops</div>
-    </div>
-
-    <div class="venn-center">
-      <div class="core-label">Profound Knowledge</div>
-      <div class="core-sub">The Growing Core</div>
-    </div>
+    <div class="venn-circle vc-fintech"><div class="icon">&#9672;</div><div class="name">Fintech &amp; Banking</div><div class="sub">RewmoAI</div></div>
+    <div class="venn-circle vc-construction"><div class="icon">&#9635;</div><div class="name">Construction &amp; Infrastructure</div><div class="sub">ProjMgt.AI</div></div>
+    <div class="venn-circle vc-energy"><div class="icon">&#9673;</div><div class="name">Energy &amp; Climate</div><div class="sub">LeafPAYS</div></div>
+    <div class="venn-circle vc-defense"><div class="icon">&#11041;</div><div class="name">Defense &amp; Logistics</div><div class="sub">Supply Chain AI</div></div>
+    <div class="venn-circle vc-aviation"><div class="icon">&#9651;</div><div class="name">Aviation &amp; Aerospace</div><div class="sub">40+ Years Flight Ops</div></div>
+    <div class="venn-center"><div class="core-label">Profound Knowledge</div><div class="core-sub">The Growing Core</div></div>
   </div>
-
-  <p class="venn-description">
-    Each vertical feeds intelligence into the center. Shared AI infrastructure, <strong>military-grade methodology</strong>, and compounding domain expertise create a core that <strong>grows stronger with every agent deployed</strong>. This is not a portfolio of separate companies — it's a system designed to converge.
-  </p>
+  <p class="venn-description">Each vertical feeds intelligence into the center. Shared AI infrastructure, <strong>military-grade methodology</strong>, and compounding domain expertise create a core that <strong>grows stronger with every agent deployed</strong>. This is not a portfolio of separate companies — it's a system designed to converge.</p>
 </section>
-
-<!-- AGENTS -->
 <section class="agents-section" id="agents">
   <div class="section-label" style="text-align:center;">&#9670; The Agent Constellation</div>
   <h2>Six Verticals. One Architecture.</h2>
-
   <div class="agents-grid">
-    <div class="agent-card fintech">
+    <a href="https://rewmo.ai" target="_blank" class="agent-card fintech">
       <div class="agent-icon">&#9672;</div>
       <div class="agent-name">RewmoAI</div>
       <div class="agent-tag">Fintech · Banking · Payments</div>
-      <div class="agent-desc">Financial AI agents turning everyday payments — rent, loans, mortgages — into rewards that build wealth. Embedded finance for regional banks. Blockchain-ready. $28M raised.</div>
-    </div>
-
-    <div class="agent-card construction">
+      <div class="agent-desc">Financial AI agents turning everyday payments — rent, loans, mortgages — into rewards that build wealth. Embedded finance for regional banks. Blockchain-ready. Bootstrapped and building.</div>
+      <div class="agent-link">Visit rewmo.ai &#8599;</div>
+    </a>
+    <a href="https://projmgt.ai" target="_blank" class="agent-card construction">
       <div class="agent-icon">&#9635;</div>
       <div class="agent-name">ProjMgt.AI</div>
       <div class="agent-tag">Construction · Infrastructure · Federal</div>
       <div class="agent-desc">AI agents for project scheduling, resource optimization, RFI management, change order tracking, and USACE-compliant quality management on complex builds.</div>
-    </div>
-
-    <div class="agent-card aviation">
+      <div class="agent-link">Visit projmgt.ai &#8599;</div>
+    </a>
+    <a href="https://leafpays.com" target="_blank" class="agent-card energy">
+      <div class="agent-icon">&#9673;</div>
+      <div class="agent-name">LeafPAYS</div>
+      <div class="agent-tag">Energy · Climate · ESG</div>
+      <div class="agent-desc">Carbon tracking, ESG scoring, flare-gas-to-fuel optimization, and clean energy transition planning. Consolidating Flare2Fuel and Greenspar.x into one AI-powered climate platform.</div>
+      <div class="agent-link">Visit leafpays.com &#8599;</div>
+    </a>
+    <a href="#founder" class="agent-card aviation">
       <div class="agent-icon">&#9651;</div>
       <div class="agent-name">Aviation AI</div>
       <div class="agent-tag">Aviation · Aerospace · Flight Ops</div>
       <div class="agent-desc">Predictive maintenance, crew scheduling, safety compliance, and MRO optimization — built on 40+ years of flight operations from Naval Aviation to theater-level command.</div>
-    </div>
-
-    <div class="agent-card energy">
-      <div class="agent-icon">&#9673;</div>
-      <div class="agent-name">Energy AI</div>
-      <div class="agent-tag">Energy · Climate · ESG</div>
-      <div class="agent-desc">Carbon tracking, ESG scoring, flare-gas-to-fuel optimization, and clean energy transition planning. Consolidating LeafPAYS, Flare2Fuel, and Greenspar.x into one AI-powered platform.</div>
-    </div>
-
-    <div class="agent-card defense">
+      <div class="agent-link">Coming soon &#8594;</div>
+    </a>
+    <a href="#founder" class="agent-card defense">
       <div class="agent-icon">&#11041;</div>
       <div class="agent-name">Logistics AI</div>
       <div class="agent-tag">Defense · Maritime · Supply Chain</div>
       <div class="agent-desc">Theater-level logistics, fleet optimization, Lean/Six Sigma AI, and military-grade supply chain planning. Born from LOGCAP, Gorgon LNG, and $600M savings methodology.</div>
-    </div>
-
-    <div class="agent-card security">
+      <div class="agent-link">Coming soon &#8594;</div>
+    </a>
+    <a href="https://github.com/GReinhold-ai/aicm" target="_blank" class="agent-card security">
       <div class="agent-icon">&#9671;</div>
       <div class="agent-name">AICM</div>
       <div class="agent-tag">Open Source · Agent Security</div>
       <div class="agent-desc">The security layer that monitors all Centriv agents — and yours. Detects skill-injection attacks, credential theft, and auto-quarantines compromised agents. Free. Open source.</div>
-    </div>
+      <div class="agent-link">View on GitHub &#8599;</div>
+    </a>
   </div>
 </section>
-
-<!-- METHODOLOGY -->
 <section class="method-section" id="methodology">
   <div class="section-label">&#9670; The Centriv Methodology</div>
   <h2>Built on Deming. Forged in Combat.</h2>
   <p class="subtitle">Every Centriv agent carries embedded operational doctrine from 40+ years of military service, aviation, and industrial operations.</p>
-
   <div class="method-grid">
-    <div class="method-item">
-      <div class="method-num">01</div>
-      <div class="method-title">Systems Thinking</div>
-      <div class="method-desc">The Reinhold Model — cross-functional process interaction designed at HQMC. Now applied to multi-agent AI system design.</div>
-    </div>
-    <div class="method-item">
-      <div class="method-num">02</div>
-      <div class="method-title">Knowledge of Variation</div>
-      <div class="method-desc">Lean, Kaizen, Six Sigma — understanding variation across supply chains, construction timelines, and financial systems.</div>
-    </div>
-    <div class="method-item">
-      <div class="method-num">03</div>
-      <div class="method-title">Theory of Knowledge</div>
-      <div class="method-desc">Domain expertise is not data. It's judgment earned through decades. Our agents encode tacit knowledge, not just information.</div>
-    </div>
-    <div class="method-item">
-      <div class="method-num">04</div>
-      <div class="method-title">Psychology</div>
-      <div class="method-desc">Understanding how people and organizations adopt change. TQL, Baldrige, and Deming — applied to AI agent deployment in regulated environments.</div>
-    </div>
+    <div class="method-item"><div class="method-num">01</div><div class="method-title">Systems Thinking</div><div class="method-desc">The Reinhold Model — cross-functional process interaction designed at HQMC. Now applied to multi-agent AI system design.</div></div>
+    <div class="method-item"><div class="method-num">02</div><div class="method-title">Knowledge of Variation</div><div class="method-desc">Lean, Kaizen, Six Sigma — understanding variation across supply chains, construction timelines, and financial systems.</div></div>
+    <div class="method-item"><div class="method-num">03</div><div class="method-title">Theory of Knowledge</div><div class="method-desc">Domain expertise is not data. It's judgment earned through decades. Our agents encode tacit knowledge, not just information.</div></div>
+    <div class="method-item"><div class="method-num">04</div><div class="method-title">Psychology</div><div class="method-desc">Understanding how people and organizations adopt change. TQL, Baldrige, and Deming — applied to AI agent deployment in regulated environments.</div></div>
   </div>
 </section>
-
-<!-- FOUNDER -->
 <section class="founder-section" id="founder">
   <div class="founder-card">
     <div class="founder-visual">
@@ -800,26 +121,19 @@ footer .copy {
       <div class="section-label">&#9670; Founder</div>
       <h3>Gary Reinhold</h3>
       <div class="founder-title">Founder &amp; CEO, Centriv.ai</div>
-      <p class="founder-bio">
-        40+ years building and leading across military, aviation, construction, energy, and finance. From combat logistics in Desert Storm to managing $5.4 billion programs at KBR, from scheduling 50+ vessels on the Gorgon LNG mega-project to raising $28M for RewmoAI — Gary builds AI agents the way he built everything else: with doctrine, discipline, and domain expertise that no lab can replicate.
-      </p>
+      <p class="founder-bio">40+ years building and leading across military, aviation, construction, energy, and finance. From combat logistics in Desert Storm to managing $5.4 billion programs at KBR, from scheduling 50+ vessels on the Gorgon LNG mega-project to bootstrapping multiple AI ventures — Gary builds AI agents the way he built everything else: with doctrine, discipline, and domain expertise that no lab can replicate.</p>
     </div>
   </div>
 </section>
-
-<!-- CTA -->
 <section class="cta-section">
   <div class="section-label">&#9670; Get Involved</div>
   <h2>The Center is <em>Growing</em></h2>
   <p class="cta-sub">Whether you're an investor, enterprise partner, or developer — Centriv.ai is building the future of domain-expert AI agents.</p>
   <a href="mailto:gary@centriv.ai" class="cta-btn">Start the Conversation &#8594;</a>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="logo">CENTRIV <span>.ai</span></div>
   <div class="copy">&copy; 2026 Centriv AI. All rights reserved. AICM is open source under MIT license.</div>
 </footer>
-
 </body>
 </html>
