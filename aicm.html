@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AICM — Open-Source Agent Integrity &amp; Compromise Monitor</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg-deep:#0a0c10;--bg-card:#12151c;--bg-card-hover:#181c26;--accent-gold:#c9a84c;--accent-gold-dim:rgba(201,168,76,0.15);--text-primary:#e8e4dc;--text-secondary:#8a8680;--text-dim:#5a5650;--border:rgba(201,168,76,0.12);--border-gold:rgba(201,168,76,0.25);--code-bg:#0d1117;--code-green:#7ee787;--code-blue:#79c0ff;--code-orange:#ffa657;--code-purple:#d2a8ff;--code-red:#ff7b72;--code-dim:#8b949e}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg-deep);color:var(--text-primary);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}h1,h2,h3,.serif{font-family:'DM Serif Display',serif}code,.mono{font-family:'JetBrains Mono',monospace}nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,12,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}.logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--accent-gold);letter-spacing:0.05em;text-decoration:none}.logo span{color:var(--text-dim);font-weight:300;font-family:'Outfit',sans-serif;font-size:0.85rem}.nav-links{display:flex;gap:2.5rem}.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}.nav-links a:hover{color:var(--accent-gold)}.nav-cta{display:inline-block;padding:0.6rem 1.5rem;background:transparent;border:1px solid var(--accent-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}.nav-cta:hover{background:var(--accent-gold);color:var(--bg-deep)}
+
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10rem 2rem 4rem;position:relative}.hero::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none}.hero-badge{display:inline-flex;align-items:center;gap:0.75rem;padding:0.5rem 1.2rem;background:var(--accent-gold-dim);border:1px solid var(--border-gold);font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:2rem;animation:fadeInDown 0.8s ease}.hero-badge .mit{background:rgba(126,231,135,0.15);color:var(--code-green);padding:0.15rem 0.5rem;font-size:0.65rem;border:1px solid rgba(126,231,135,0.3);margin-left:0.25rem}.hero h1{font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:1.1;max-width:900px;margin-bottom:1.5rem;animation:fadeInUp 0.8s ease 0.2s both}.hero h1 em{font-style:italic;color:var(--accent-gold)}.hero-sub{font-size:1.1rem;color:var(--text-secondary);max-width:640px;line-height:1.7;font-weight:300;margin-bottom:2.5rem;animation:fadeInUp 0.8s ease 0.4s both}.hero-actions{display:flex;gap:1rem;animation:fadeInUp 0.8s ease 0.6s both;flex-wrap:wrap;justify-content:center}.btn-primary{display:inline-block;padding:1rem 2.5rem;background:var(--accent-gold);color:var(--bg-deep);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,0.2)}.btn-secondary{display:inline-block;padding:1rem 2.5rem;background:transparent;border:1px solid var(--border-gold);color:var(--accent-gold);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.btn-secondary:hover{background:rgba(201,168,76,0.1)}.btn-dark{display:inline-block;padding:1rem 2.5rem;background:#24292e;color:#fff;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}.btn-dark:hover{background:#2d3339;transform:translateY(-2px)}
+
+.section-wrap{max-width:1100px;margin:0 auto;padding:5rem 4rem}.section-label{font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:1rem}
+
+/* WHAT IT DOES */
+.threat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.threat-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}.threat-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--accent-gold);opacity:0.4;transition:opacity 0.3s}.threat-card:hover{background:var(--bg-card-hover);transform:translateY(-3px);border-color:var(--border-gold)}.threat-card:hover::before{opacity:1}.threat-card .t-icon{font-size:1.8rem;margin-bottom:0.75rem}.threat-card .t-title{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.5rem}.threat-card .t-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.7;font-weight:300}
+
+/* ARCHITECTURE */
+.arch-section{padding:5rem 4rem;background:linear-gradient(180deg,transparent 0%,rgba(201,168,76,0.015) 50%,transparent 100%)}.arch-box{max-width:900px;margin:0 auto;background:var(--code-bg);border:1px solid rgba(201,168,76,0.15);padding:2.5rem;overflow-x:auto}.arch-box pre{font-family:'JetBrains Mono',monospace;font-size:0.72rem;line-height:1.6;color:var(--code-dim);white-space:pre;overflow-x:auto}
+
+/* BENEFITS */
+.benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.benefit-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;display:flex;gap:1.25rem;transition:all 0.3s}.benefit-card:hover{border-color:var(--border-gold);background:var(--bg-card-hover)}.benefit-card .b-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent-gold);opacity:0.4;line-height:1;min-width:2rem}.benefit-card .b-title{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.4rem}.benefit-card .b-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.6;font-weight:300}
+
+/* USE CASES */
+.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.use-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;text-align:center;transition:all 0.3s}.use-card:hover{border-color:var(--border-gold);background:var(--bg-card-hover)}.use-card .u-icon{font-size:2rem;margin-bottom:0.75rem}.use-card .u-title{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.5rem}.use-card .u-desc{font-size:0.8rem;color:var(--text-secondary);line-height:1.6;font-weight:300}
+
+/* QUICKSTART */
+.qs-section{padding:5rem 4rem}.qs-wrap{max-width:900px;margin:0 auto}.step{margin-bottom:2.5rem}.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--accent-gold);color:var(--bg-deep);font-family:'DM Serif Display',serif;font-size:0.85rem;margin-right:0.75rem;font-weight:700}.step-title{font-family:'DM Serif Display',serif;font-size:1.15rem;display:inline}.step-desc{font-size:0.85rem;color:var(--text-secondary);margin:0.75rem 0;line-height:1.6;font-weight:300;padding-left:2.5rem}
+.code-block{background:var(--code-bg);border:1px solid rgba(201,168,76,0.1);padding:1.25rem 1.5rem;margin:0.5rem 0 0 2.5rem;overflow-x:auto;position:relative}.code-block code{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--code-dim);line-height:1.8}.code-block .comment{color:#6e7681}.code-block .cmd{color:var(--code-green)}.code-block .flag{color:var(--code-orange)}.code-block .url{color:var(--code-blue)}
+
+/* ENTERPRISE */
+.ent-section{padding:5rem 4rem;background:linear-gradient(180deg,transparent 0%,rgba(201,168,76,0.02) 50%,transparent 100%)}.ent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;max-width:900px;margin:0 auto;border:1px solid var(--border)}.ent-item{padding:1.5rem 2rem;border-bottom:1px solid var(--border);transition:background 0.3s}.ent-item:nth-child(odd){border-right:1px solid var(--border)}.ent-item:hover{background:var(--bg-card)}.ent-item .e-title{font-family:'DM Serif Display',serif;font-size:0.95rem;margin-bottom:0.3rem}.ent-item .e-desc{font-size:0.8rem;color:var(--text-secondary);font-weight:300}
+
+.cta-section{padding:6rem 4rem;text-align:center;position:relative}.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.04) 0%,transparent 70%);pointer-events:none}.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);max-width:600px;margin:0 auto 1rem}.cta-section h2 em{font-style:italic;color:var(--accent-gold)}.cta-sub{color:var(--text-secondary);max-width:500px;margin:0 auto 2rem;font-weight:300;line-height:1.7}
+footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}footer .logo{font-size:1.2rem}footer .copy{font-size:0.75rem;color:var(--text-dim)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){nav{padding:1rem 2rem}.nav-links{display:none}.threat-grid,.use-grid{grid-template-columns:1fr}.benefit-grid,.ent-grid{grid-template-columns:1fr}.ent-item:nth-child(odd){border-right:none}.section-wrap,.arch-section,.qs-section,.ent-section,.cta-section{padding:3rem 1.5rem !important}.hero-actions{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">CENTRIV <span>.ai</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#agents">All Agents</a>
+    <a href="https://github.com/GReinhold-ai/aicm" target="_blank">GitHub &#8599;</a>
+    <a href="https://aicm-beta.vercel.app" target="_blank">Live Demo &#8599;</a>
+  </div>
+  <a href="mailto:gary@centriv.ai" class="nav-cta">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">&#9671; AICM <span class="mit">MIT LICENSE</span></div>
+  <h1>Agent Integrity &amp; <em>Compromise Monitor</em></h1>
+  <p class="hero-sub">Open-source security monitoring for AI agents. Detects skill-injection attacks, credential theft, and auto-quarantines compromised agents — built for regulated environments where failure isn't an option.</p>
+  <div class="hero-actions">
+    <a href="https://github.com/GReinhold-ai/aicm" target="_blank" class="btn-dark">&#9733; View on GitHub</a>
+    <a href="#quickstart" class="btn-primary">Quick Start &#8595;</a>
+    <a href="https://aicm-beta.vercel.app" target="_blank" class="btn-secondary">Live Dashboard &#8599;</a>
+  </div>
+</section>
+
+<!-- WHAT AICM DETECTS -->
+<div class="section-wrap">
+  <div class="section-label">&#9671; What AICM Detects</div>
+  <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Real Threats to AI Agent Systems</h2>
+  <p style="color:var(--text-secondary);max-width:700px;line-height:1.7;font-weight:300;margin-bottom:3rem;">As AI agents gain autonomy — executing code, accessing databases, managing credentials — they become attack surfaces. AICM monitors for the threats that matter.</p>
+  <div class="threat-grid">
+    <div class="threat-card">
+      <div class="t-icon">&#9888;</div>
+      <div class="t-title">Skill-Injection Attacks</div>
+      <div class="t-desc">Detects when adversaries attempt to inject malicious instructions into agent tool chains, overriding intended behavior to execute unauthorized actions or extract sensitive data.</div>
+    </div>
+    <div class="threat-card">
+      <div class="t-icon">&#128274;</div>
+      <div class="t-title">Credential Theft</div>
+      <div class="t-desc">Monitors for unauthorized access to API keys, tokens, database credentials, and secrets that agents handle during normal operations. Alerts on anomalous credential access patterns.</div>
+    </div>
+    <div class="threat-card">
+      <div class="t-icon">&#9762;</div>
+      <div class="t-title">Auto-Quarantine</div>
+      <div class="t-desc">When compromise is detected, AICM automatically isolates the affected agent — preventing lateral movement across your agent fleet before damage spreads.</div>
+    </div>
+    <div class="threat-card">
+      <div class="t-icon">&#128065;</div>
+      <div class="t-title">Prompt Manipulation</div>
+      <div class="t-desc">Identifies attempts to override system prompts, bypass safety guardrails, or manipulate agent reasoning through adversarial inputs — a growing attack vector in production systems.</div>
+    </div>
+    <div class="threat-card">
+      <div class="t-icon">&#9881;</div>
+      <div class="t-title">Tool Abuse Detection</div>
+      <div class="t-desc">Monitors agent tool calls for anomalous patterns — unusual API endpoints, unexpected file system access, excessive data exfiltration, or calls that deviate from baseline behavior.</div>
+    </div>
+    <div class="threat-card">
+      <div class="t-icon">&#128200;</div>
+      <div class="t-title">Behavioral Drift</div>
+      <div class="t-desc">Tracks agent behavior over time to detect subtle drift — gradual changes in tool usage, response patterns, or decision-making that may indicate slow-burn compromise or model degradation.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARCHITECTURE -->
+<section class="arch-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label" style="text-align:center;">&#9671; Architecture</div>
+    <h2 style="text-align:center;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;">Sensor → Server → Dashboard</h2>
+    <div class="arch-box">
+<pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                      <span style="color:var(--accent-gold)">AICM Architecture</span>                        │
+└─────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+  │  <span style="color:var(--code-blue)">Agent #1</span>    │    │  <span style="color:var(--code-blue)">Agent #2</span>    │    │  <span style="color:var(--code-blue)">Agent #N</span>    │
+  │ ┌─────────┐ │    │ ┌─────────┐ │    │ ┌─────────┐ │
+  │ │ <span style="color:var(--code-green)">Sensor</span>  │ │    │ │ <span style="color:var(--code-green)">Sensor</span>  │ │    │ │ <span style="color:var(--code-green)">Sensor</span>  │ │
+  │ └────┬────┘ │    │ └────┬────┘ │    │ └────┬────┘ │
+  └──────┼──────┘    └──────┼──────┘    └──────┼──────┘
+         │                  │                  │
+         └──────────────────┼──────────────────┘
+                            │ <span style="color:var(--code-orange)">HTTPS / mTLS</span>
+                            ▼
+  ┌───────────────────────────────────────────────────────────────┐
+  │                     <span style="color:var(--accent-gold)">AICM Server</span>                              │
+  │  ┌──────────────┐  ┌───────────────┐  ┌──────────────────┐  │
+  │  │ <span style="color:var(--code-purple)">Policy Engine</span> │  │ <span style="color:var(--code-purple)">Telemetry Ingest</span>│  │ <span style="color:var(--code-purple)">Quarantine Mgr</span>  │  │
+  │  └──────────────┘  └───────────────┘  └──────────────────┘  │
+  │  ┌────────────────────────────────────────────────────────┐  │
+  │  │                <span style="color:var(--code-blue)">FastAPI Backend</span>                         │  │
+  │  └────────────────────────────────────────────────────────┘  │
+  └───────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+  ┌───────────────────────────────────────────────────────────────┐
+  │  <span style="color:var(--code-green)">React Dashboard</span>  │  Agent Status  │  Alerts  │  Telemetry  │
+  └───────────────────────────────────────────────────────────────┘
+</pre>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<div class="section-wrap">
+  <div class="section-label">&#9671; Use Cases Across AI</div>
+  <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Who AICM Is For</h2>
+  <p style="color:var(--text-secondary);max-width:700px;line-height:1.7;font-weight:300;margin-bottom:3rem;">AICM is designed for any team deploying AI agents in production — especially in regulated or high-stakes environments.</p>
+  <div class="use-grid">
+    <div class="use-card"><div class="u-icon">&#9672;</div><div class="u-title">Financial Services</div><div class="u-desc">AI agents handling transactions, loan processing, or trading require security monitoring that meets regulatory standards. AICM provides the audit trail and quarantine capabilities compliance demands.</div></div>
+    <div class="use-card"><div class="u-icon">&#9635;</div><div class="u-title">Construction &amp; Federal</div><div class="u-desc">Agents managing scheduling, RFIs, or USACE compliance on government contracts need verifiable security. AICM monitors agent behavior against defined policy baselines.</div></div>
+    <div class="use-card"><div class="u-icon">&#9673;</div><div class="u-title">Energy &amp; Climate</div><div class="u-desc">Carbon tracking, ESG scoring, and grid management agents handling sensitive environmental data. AICM ensures data integrity and prevents unauthorized data exfiltration.</div></div>
+    <div class="use-card"><div class="u-icon">&#9651;</div><div class="u-title">Aviation &amp; Aerospace</div><div class="u-desc">Predictive maintenance and safety compliance agents where compromised output could affect flight safety. AICM enforces zero-trust monitoring at the agent level.</div></div>
+    <div class="use-card"><div class="u-icon">&#11041;</div><div class="u-title">Defense &amp; Logistics</div><div class="u-desc">Military and supply chain agents operating in adversarial environments. AICM's auto-quarantine prevents compromised agents from affecting operational decisions.</div></div>
+    <div class="use-card"><div class="u-icon">&#9671;</div><div class="u-title">Any Production Agent</div><div class="u-desc">If you're deploying AI agents that access APIs, databases, credentials, or make decisions — AICM gives you visibility into what your agents are doing and stops them when they shouldn't.</div></div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="section-wrap">
+  <div class="section-label">&#9671; Why AICM</div>
+  <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;">The Strategic Advantage</h2>
+  <div class="benefit-grid">
+    <div class="benefit-card"><div class="b-num">01</div><div><div class="b-title">Open Source Builds Trust</div><div class="b-desc">Full source visibility. No black boxes. Developers and security teams can audit every line. MIT licensed — use it anywhere, for anything, forever.</div></div></div>
+    <div class="benefit-card"><div class="b-num">02</div><div><div class="b-title">Compliance-Ready</div><div class="b-desc">Built for regulated environments. Telemetry logging, audit trails, and policy enforcement give you the documentation compliance officers and auditors require.</div></div></div>
+    <div class="benefit-card"><div class="b-num">03</div><div><div class="b-title">Framework Agnostic</div><div class="b-desc">Works with any AI agent framework — LangChain, AutoGPT, CrewAI, custom agents, or Centriv's own vertical agents. Drop in a sensor and you're monitoring.</div></div></div>
+    <div class="benefit-card"><div class="b-num">04</div><div><div class="b-title">Auto-Quarantine</div><div class="b-desc">Don't just alert — act. AICM can automatically isolate compromised agents, preventing lateral movement and damage before your team even sees the alert.</div></div></div>
+    <div class="benefit-card"><div class="b-num">05</div><div><div class="b-title">Enterprise Pathway</div><div class="b-desc">Free OSS core with an enterprise upgrade path: SIEM integration, Postgres telemetry, PagerDuty alerts, mTLS encryption, and compliance reporting dashboards.</div></div></div>
+    <div class="benefit-card"><div class="b-num">06</div><div><div class="b-title">Battle-Tested Methodology</div><div class="b-desc">Built by a team with 40+ years of military and aviation safety methodology. The same risk management rigor from Naval Aviation Safety Officer School now applied to AI agent security.</div></div></div>
+  </div>
+</div>
+
+<!-- QUICKSTART -->
+<section class="qs-section" id="quickstart">
+  <div class="qs-wrap">
+    <div class="section-label">&#9671; Quick Start</div>
+    <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;">Up and Running in 5 Minutes</h2>
+
+    <div class="step">
+      <span class="step-num">1</span><div class="step-title">Clone the Repository</div>
+      <p class="step-desc">Download AICM from GitHub.</p>
+      <div class="code-block"><code><span class="cmd">git clone</span> <span class="url">https://github.com/GReinhold-ai/aicm.git</span>
+<span class="cmd">cd</span> aicm</code></div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">2</span><div class="step-title">Install Dependencies</div>
+      <p class="step-desc">AICM uses Python (FastAPI backend) and React (dashboard). Install the Python requirements first.</p>
+      <div class="code-block"><code><span class="cmd">pip install</span> <span class="flag">-r</span> requirements.txt</code></div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">3</span><div class="step-title">Start the AICM Server</div>
+      <p class="step-desc">Run the FastAPI server that receives telemetry from agent sensors and enforces policies.</p>
+      <div class="code-block"><code><span class="comment"># Development</span>
+<span class="cmd">uvicorn</span> main:app <span class="flag">--reload</span>
+
+<span class="comment"># Production</span>
+<span class="cmd">gunicorn</span> main:app <span class="flag">-w 4 -k</span> uvicorn.workers.UvicornWorker</code></div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">4</span><div class="step-title">Deploy a Sensor to Your Agent</div>
+      <p class="step-desc">Add the lightweight Python sensor to any AI agent. It monitors behavior and reports telemetry to the AICM server.</p>
+      <div class="code-block"><code><span class="comment"># Run once (for testing)</span>
+<span class="cmd">python</span> agent_sensor.py <span class="flag">--once</span>
+
+<span class="comment"># Run as daemon (production)</span>
+<span class="cmd">python</span> agent_sensor.py <span class="flag">--server</span> <span class="url">http://your-aicm-server:8000</span></code></div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">5</span><div class="step-title">Launch the Dashboard</div>
+      <p class="step-desc">View real-time agent status, alerts, and telemetry in the React dashboard. Or visit the live demo.</p>
+      <div class="code-block"><code><span class="comment"># Set up React dashboard</span>
+<span class="cmd">npm create</span> vite@latest aicm-dashboard <span class="flag">--</span> <span class="flag">--template</span> react
+<span class="cmd">cp</span> Dashboard.jsx aicm-dashboard/src/
+<span class="cmd">cd</span> aicm-dashboard &amp;&amp; <span class="cmd">npm install</span> &amp;&amp; <span class="cmd">npm run dev</span></code></div>
+      <p class="step-desc" style="margin-top:0.75rem;">Or view the live dashboard: <a href="https://aicm-beta.vercel.app" target="_blank" style="color:var(--accent-gold);text-decoration:none;">aicm-beta.vercel.app &#8599;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ENTERPRISE -->
+<section class="ent-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label" style="text-align:center;">&#9671; Enterprise Edition (Coming Soon)</div>
+    <h2 style="text-align:center;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;">Production-Grade Agent Security</h2>
+    <div class="ent-grid">
+      <div class="ent-item"><div class="e-title">SIEM Integration</div><div class="e-desc">Forward agent telemetry to Splunk, Datadog, or any SIEM for unified security monitoring.</div></div>
+      <div class="ent-item"><div class="e-title">Postgres Telemetry Store</div><div class="e-desc">Persistent, queryable telemetry database for historical analysis, forensics, and compliance audits.</div></div>
+      <div class="ent-item"><div class="e-title">PagerDuty Alerts</div><div class="e-desc">Real-time alerting through PagerDuty, Slack, or webhooks when agents are compromised or quarantined.</div></div>
+      <div class="ent-item"><div class="e-title">mTLS Encryption</div><div class="e-desc">Mutual TLS between sensors and server — ensuring only authenticated agents can report telemetry.</div></div>
+      <div class="ent-item"><div class="e-title">Compliance Reporting</div><div class="e-desc">Pre-built reports for SOC 2, HIPAA, and federal compliance requirements for AI agent deployments.</div></div>
+      <div class="ent-item"><div class="e-title">Multi-Tenant Support</div><div class="e-desc">Manage agent fleets across multiple teams, environments, and clients from a single AICM instance.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label">&#9671; Get Started</div>
+  <h2>Secure Your <em>Agent Fleet</em></h2>
+  <p class="cta-sub">AICM is free, open source, and MIT licensed. Star the repo, deploy a sensor, and start monitoring your agents today.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="https://github.com/GReinhold-ai/aicm" target="_blank" class="btn-dark">&#9733; Star on GitHub</a>
+    <a href="mailto:gary@centriv.ai" class="btn-primary">Enterprise Inquiries &#8594;</a>
+    <a href="https://www.linkedin.com/in/rewmoai" target="_blank" class="btn-secondary">LinkedIn &#8599;</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo">CENTRIV <span>.ai</span></a>
+  <div class="copy">&copy; 2026 Centriv AI. AICM is open source under MIT license.</div>
+</footer>
+</body>
+</html>
