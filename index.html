@@ -21,19 +21,23 @@
             <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM &#8599;</a>
   </div>
   <a href="/cdn-cgi/l/email-protection#8deaecfff4cdeee8e3f9ffe4fba3ece4" class="nav-cta">Contact</a>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#philosophy">Philosophy</a>
-  <a href="#agents">Agents</a>
-  <a href="#methodology">Methodology</a>
-  <a href="/founder.html">Founder</a>
-  <a href="/agentcharter.html">AgentCharter</a>
-  <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM</a>
-  <a href="mailto:info@centriv.ai">Contact</a>
+<button class="hamburger" id="hamBtn" aria-label="Open menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<div class="mobile-menu" id="mobMenu">
+  <a href="#philosophy" onclick="closeMenu()">Philosophy</a>
+  <a href="#agents" onclick="closeMenu()">Agents</a>
+  <a href="#methodology" onclick="closeMenu()">Methodology</a>
+  <a href="/founder.html" onclick="closeMenu()">Founder</a>
+  <a href="/agentcharter.html" onclick="closeMenu()">AgentCharter</a>
+  <a href="https://github.com/GReinhold-ai/aicm" target="_blank" onclick="closeMenu()">AICM</a>
+  <a href="mailto:info@centriv.ai" onclick="closeMenu()">Contact</a>
 </div>
+
 <section class="hero">
   <div class="hero-badge">&#9670; Domain-Expert AI Agents for Regulated Industries</div>
   <h1>The <em>Profound Center</em> of Industrial AI</h1>
