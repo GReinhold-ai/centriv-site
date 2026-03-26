@@ -32,12 +32,7 @@ section{padding:80px 24px}
 .section-tag{font-family:sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B7924A;margin-bottom:16px}
 h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:12px}
 .section-sub{font-family:sans-serif;font-size:14px;color:#666;max-width:580px;line-height:1.7;margin-bottom:48px}
-.venn-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;margin-bottom:32px}
-.venn-cell{background:#141414;padding:28px 20px;text-align:center}
-.venn-cell.mid{background:#121210}
-.venn-icon{font-size:20px;margin-bottom:10px;opacity:.7}
-.venn-title{font-family:sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;color:#B7924A;text-transform:uppercase;margin-bottom:4px}
-.venn-label{font-family:sans-serif;font-size:11px;color:#555;line-height:1.5}
+.venn-svg-wrap{width:100%;max-width:860px;margin:0 auto 32px;}
 .verticals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden}
 .v-card{background:#141414;padding:28px 24px;text-decoration:none;transition:background .2s;display:block}
 .v-card:hover{background:#181818}
@@ -98,7 +93,7 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
     <a href="https://www.centriv.ai/founder.html">Founder</a>
     <a href="https://www.centriv.ai/agentcharter.html">AgentCharter</a>
     <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM ↗</a>
-    <a href="mailto:info@centriv.ai" class="cta">Contact</a>
+    <a href="/cdn-cgi/l/email-protection#bed7d0d8d1fedddbd0caccd7c890dfd7" class="cta">Contact</a>
   </div>
 </nav>
 
@@ -121,36 +116,72 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
     <div class="section-tag">◆ &nbsp;Our Philosophy</div>
     <h2>Profound Knowledge Grows at the Center</h2>
     <p class="section-sub">Inspired by Deming's System of Profound Knowledge — as domain expertise deepens in each vertical, the convergent center expands, making every agent stronger.</p>
-    <div class="venn-wrap">
-      <div class="venn-cell">
-        <div class="venn-icon">◈</div>
-        <div class="venn-title">Fintech &amp; Training</div>
-        <div class="venn-label">RewmoAI<br>LeanAI Lab</div>
-      </div>
-      <div class="venn-cell mid" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-        <div class="venn-icon" style="color:#B7924A;opacity:1">◉</div>
-        <div class="venn-title" style="color:#B7924A">Profound Knowledge</div>
-        <div class="venn-label" style="margin-top:6px;font-size:11px;color:#444;line-height:1.6">Shared AI infrastructure.<br>Military-grade methodology.<br>Compounding domain expertise.</div>
-      </div>
-      <div class="venn-cell">
-        <div class="venn-icon">▣</div>
-        <div class="venn-title">Construction</div>
-        <div class="venn-label">ProjMgt.AI<br>CarrierAuditAI</div>
-      </div>
-      <div class="venn-cell">
-        <div class="venn-icon">◉</div>
-        <div class="venn-title">Energy &amp; Climate</div>
-        <div class="venn-label">LeafPAYS</div>
-      </div>
-      <div class="venn-cell mid" style="display:flex;align-items:center;justify-content:center">
-        <div class="venn-label" style="font-size:12px;color:#3a3a3a;line-height:1.7;max-width:220px;text-align:center">This is not a portfolio of separate companies — it's a system designed to converge.</div>
-      </div>
-      <div class="venn-cell">
-        <div class="venn-icon">△⬡</div>
-        <div class="venn-title">Aviation &amp; Logistics</div>
-        <div class="venn-label">CarrierAuditAI<br>Supply Chain AI</div>
-      </div>
+    <div class="venn-svg-wrap">
+      <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <radialGradient id="gc" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#B7924A" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#B7924A" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Circle fills - 5 overlapping circles arranged around center -->
+        <!-- Fintech/Training - top left -->
+        <circle cx="300" cy="190" r="155" fill="rgba(183,146,74,0.04)" stroke="rgba(183,146,74,0.2)" stroke-width="1"/>
+        <!-- Construction - top right -->
+        <circle cx="560" cy="190" r="155" fill="rgba(183,146,74,0.04)" stroke="rgba(183,146,74,0.2)" stroke-width="1"/>
+        <!-- Energy - bottom left -->
+        <circle cx="240" cy="340" r="130" fill="rgba(183,146,74,0.04)" stroke="rgba(183,146,74,0.2)" stroke-width="1"/>
+        <!-- Aviation/Logistics - bottom right -->
+        <circle cx="620" cy="340" r="130" fill="rgba(183,146,74,0.04)" stroke="rgba(183,146,74,0.2)" stroke-width="1"/>
+        <!-- AICM - bottom center -->
+        <circle cx="430" cy="370" r="110" fill="rgba(83,74,183,0.06)" stroke="rgba(83,74,183,0.2)" stroke-width="1"/>
+
+        <!-- Center glow -->
+        <circle cx="430" cy="255" r="90" fill="url(#gc)"/>
+        <circle cx="430" cy="255" r="58" fill="rgba(183,146,74,0.08)" stroke="rgba(183,146,74,0.35)" stroke-width="1" filter="url(#glow)"/>
+
+        <!-- Center label -->
+        <text x="430" y="244" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#B7924A" font-style="italic">Profound</text>
+        <text x="430" y="262" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#B7924A" font-style="italic">Knowledge</text>
+        <text x="430" y="279" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#666" letter-spacing="0.06em">THE GROWING CORE</text>
+
+        <!-- FINTECH / TRAINING label - top left -->
+        <text x="248" y="148" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em" text-transform="uppercase">FINTECH &amp; TRAINING</text>
+        <text x="248" y="166" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">RewmoAI</text>
+        <text x="248" y="181" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">LeanAI Lab</text>
+
+        <!-- CONSTRUCTION label - top right -->
+        <text x="612" y="148" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em">CONSTRUCTION</text>
+        <text x="612" y="166" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">ProjMgt.AI</text>
+        <text x="612" y="181" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">CarrierAuditAI</text>
+
+        <!-- ENERGY label - bottom left -->
+        <text x="185" y="358" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em">ENERGY &amp; CLIMATE</text>
+        <text x="185" y="375" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">LeafPAYS</text>
+
+        <!-- AVIATION / LOGISTICS label - bottom right -->
+        <text x="672" y="358" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em">AVIATION &amp; LOGISTICS</text>
+        <text x="672" y="375" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">CarrierAuditAI</text>
+        <text x="672" y="390" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">Supply Chain AI</text>
+
+        <!-- AICM label - bottom center -->
+        <text x="430" y="450" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8880d4" letter-spacing="0.07em">AICM — SECURITY LAYER</text>
+        <text x="430" y="466" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#555">Open Source · All Verticals</text>
+
+        <!-- Connector dots at intersections -->
+        <circle cx="383" cy="210" r="3" fill="rgba(183,146,74,0.4)"/>
+        <circle cx="477" cy="210" r="3" fill="rgba(183,146,74,0.4)"/>
+        <circle cx="350" cy="300" r="3" fill="rgba(183,146,74,0.4)"/>
+        <circle cx="510" cy="300" r="3" fill="rgba(183,146,74,0.4)"/>
+        <circle cx="430" cy="330" r="3" fill="rgba(183,146,74,0.4)"/>
+      </svg>
     </div>
+    <p style="font-family:sans-serif;font-size:13px;color:#444;line-height:1.7;border-left:2px solid rgba(183,146,74,.25);padding-left:20px;max-width:680px">Each vertical feeds intelligence into the center. Shared AI infrastructure, military-grade methodology, and compounding domain expertise create a core that grows stronger with every agent deployed. This is not a portfolio of separate companies — it's a system designed to converge.</p>
   </div>
 </section>
 
@@ -342,14 +373,10 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
   <div class="section-tag" style="text-align:center">◆ &nbsp;Get Involved</div>
   <h2 style="text-align:center;margin-bottom:12px">The Center is <em>Growing</em></h2>
   <p style="font-family:sans-serif;font-size:14px;color:#666;text-align:center;max-width:480px;margin:0 auto 32px;line-height:1.7">Whether you're an investor, enterprise partner, or developer — Centriv.ai is building the future of domain-expert AI agents.</p>
-  <div style="text-align:center"><a class="cta-btn" href="mailto:info@centriv.ai">Start the Conversation →</a></div>
+  <div style="text-align:center"><a class="cta-btn" href="/cdn-cgi/l/email-protection#3d54535b527d5e5853494f544b135c54">Start the Conversation →</a></div>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">CENTRIV<span>.ai</span></div>
-  <div class="footer-copy">© 2026 Centriv AI. All rights reserved.</div>
-</footer>
-
-</body>
-</html>
+  <div class="footer-copy
