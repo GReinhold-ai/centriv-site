@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centriv.ai â€” Domain-Expert AI Agents for Regulated Industries</title>
+<title>Centriv.ai — Domain-Expert AI Agents for Regulated Industries</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -26,12 +26,12 @@ h1 em{color:#B7924A;font-style:italic}
 .hero-sub{font-family:sans-serif;font-size:15px;color:#888;max-width:560px;line-height:1.7;margin-bottom:48px}
 .hero-stats{display:flex;gap:48px;justify-content:center;border-top:1px solid rgba(255,255,255,.07);padding-top:40px;width:100%;max-width:580px}
 .stat-n{font-size:2rem;font-weight:400;color:#e8e6df;line-height:1}
-.stat-l{font-family:sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#777;margin-top:4px}
+.stat-l{font-family:sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#555;margin-top:4px}
 section{padding:80px 24px}
 .section-inner{max-width:960px;margin:0 auto}
 .section-tag{font-family:sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B7924A;margin-bottom:16px}
 h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:12px}
-.section-sub{font-family:sans-serif;font-size:14px;color:#aaa;max-width:580px;line-height:1.7;margin-bottom:48px}
+.section-sub{font-family:sans-serif;font-size:14px;color:#666;max-width:580px;line-height:1.7;margin-bottom:48px}
 .venn-svg-wrap{width:100%;max-width:860px;margin:0 auto 32px;}
 .verticals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden}
 .v-card{background:#141414;padding:28px 24px;text-decoration:none;transition:background .2s;display:block}
@@ -41,27 +41,27 @@ h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;letter-spacing:-.01em;marg
 .live{background:rgba(59,109,17,.2);color:#7dc03a;border:1px solid rgba(59,109,17,.3)}
 .building{background:rgba(183,146,74,.1);color:#B7924A;border:1px solid rgba(183,146,74,.25)}
 .oss{background:rgba(83,74,183,.12);color:#8880d4;border:1px solid rgba(83,74,183,.25)}
-.v-card-tag{font-family:sans-serif;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#777;margin-bottom:8px}
+.v-card-tag{font-family:sans-serif;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#555;margin-bottom:8px}
 .v-card-name{font-size:1.2rem;color:#e8e6df;margin-bottom:5px}
-.v-card-domain{font-family:sans-serif;font-size:11px;color:#999;margin-bottom:14px}
-.v-card-body{font-family:sans-serif;font-size:13px;color:#aaa;line-height:1.65;margin-bottom:16px}
+.v-card-domain{font-family:sans-serif;font-size:11px;color:#444;margin-bottom:14px}
+.v-card-body{font-family:sans-serif;font-size:13px;color:#666;line-height:1.65;margin-bottom:16px}
 .v-card-link{font-family:sans-serif;font-size:11px;color:#B7924A;letter-spacing:.03em}
-.v-card-link::after{content:' â†—'}
+.v-card-link::after{content:' ↗'}
 .sub-products{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
 .sub-pill{font-family:sans-serif;font-size:10px;padding:3px 9px;border-radius:20px;border:1px solid rgba(183,146,74,.2);color:#8a6e38}
 .method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:48px}
 .method-item{border-left:2px solid rgba(183,146,74,.25);padding-left:20px}
 .method-num{font-family:sans-serif;font-size:11px;color:#B7924A;letter-spacing:.08em;margin-bottom:8px}
 .method-title{font-size:1rem;margin-bottom:8px;color:#e8e6df}
-.method-body{font-family:sans-serif;font-size:13px;color:#777;line-height:1.6}
+.method-body{font-family:sans-serif;font-size:13px;color:#555;line-height:1.6}
 .creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
-.cred{font-family:sans-serif;font-size:11px;color:#777;padding:5px 14px;border:1px solid rgba(255,255,255,.07);border-radius:4px}
+.cred{font-family:sans-serif;font-size:11px;color:#555;padding:5px 14px;border:1px solid rgba(255,255,255,.07);border-radius:4px}
 .founder-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
 .founder-label{font-family:sans-serif;font-size:11px;color:#B7924A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 .founder-name{font-size:1.9rem;font-weight:400;margin-bottom:4px}
-.founder-sub{font-family:sans-serif;font-size:12px;color:#777;margin-bottom:24px}
+.founder-sub{font-family:sans-serif;font-size:12px;color:#555;margin-bottom:24px}
 .founder-link{display:inline-block;margin-top:20px;font-family:sans-serif;font-size:12px;color:#B7924A;text-decoration:none;letter-spacing:.04em}
-.founder-body{font-family:sans-serif;font-size:14px;color:#aaa;line-height:1.75}
+.founder-body{font-family:sans-serif;font-size:14px;color:#666;line-height:1.75}
 .cta-wrap{text-align:center;padding:80px 24px;border-top:1px solid rgba(255,255,255,.06)}
 .cta-btn{display:inline-block;padding:14px 36px;background:#B7924A;color:#fff;text-decoration:none;font-family:sans-serif;font-size:13px;letter-spacing:.04em;border-radius:5px;transition:opacity .2s}
 .cta-btn:hover{opacity:.86}
@@ -92,16 +92,16 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
     <a href="#methodology">Methodology</a>
     <a href="https://www.centriv.ai/founder.html">Founder</a>
     <a href="https://www.centriv.ai/agentcharter.html">AgentCharter</a>
-    <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM â†—</a>
+    <a href="https://github.com/GReinhold-ai/aicm" target="_blank">AICM ↗</a>
     <a href="/cdn-cgi/l/email-protection#bed7d0d8d1fedddbd0caccd7c890dfd7" class="cta">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">â—† &nbsp;Domain-Expert AI Agents for Regulated Industries</div>
+  <div class="hero-tag">◆ &nbsp;Domain-Expert AI Agents for Regulated Industries</div>
   <h1>The <em>Profound Center</em><br>of Industrial AI</h1>
-  <p class="hero-sub">We build AI agents for asset-heavy industries â€” fintech, construction, energy, aviation, defense &amp; logistics â€” all secured by AICM, our open-source agent integrity monitor for regulated environments.</p>
+  <p class="hero-sub">We build AI agents for asset-heavy industries — fintech, construction, energy, aviation, defense &amp; logistics — all secured by AICM, our open-source agent integrity monitor for regulated environments.</p>
   <div class="hero-stats">
     <div><div class="stat-n">40+</div><div class="stat-l">Years Experience</div></div>
     <div><div class="stat-n">7</div><div class="stat-l">Agent Products</div></div>
@@ -113,82 +113,81 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 <!-- PHILOSOPHY -->
 <section id="philosophy" style="border-top:1px solid rgba(255,255,255,.06)">
   <div class="section-inner">
-    <div class="section-tag">â—† &nbsp;Our Philosophy</div>
+    <div class="section-tag">◆ &nbsp;Our Philosophy</div>
     <h2>Profound Knowledge Grows at the Center</h2>
-    <p class="section-sub">Inspired by Deming's System of Profound Knowledge â€” as domain expertise deepens in each vertical, the convergent center expands, making every agent stronger.</p>
+    <p class="section-sub">Inspired by Deming's System of Profound Knowledge — as domain expertise deepens in each vertical, the convergent center expands, making every agent stronger.</p>
     <div class="venn-svg-wrap">
-      <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
           <radialGradient id="gc" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#B7924A" stop-opacity="0.18"/>
+            <stop offset="0%" stop-color="#B7924A" stop-opacity="0.22"/>
             <stop offset="100%" stop-color="#B7924A" stop-opacity="0"/>
           </radialGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
             <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
         </defs>
 
-        <!-- Circle fills - 5 overlapping circles arranged around center -->
-        <!-- Fintech/Training - top left -->
-        <circle cx="300" cy="190" r="155" fill="rgba(21,197,193,0.04)" stroke="#15C5C1" stroke-width="2"/>
-        <!-- Construction - top right -->
-        <circle cx="560" cy="190" r="155" fill="rgba(183,146,74,0.04)" stroke="#B7924A" stroke-width="2"/>
-        <!-- Energy - bottom left -->
-        <circle cx="240" cy="340" r="130" fill="rgba(34,197,94,0.04)" stroke="#22C55E" stroke-width="2"/>
-        <!-- Aviation/Logistics - bottom right -->
-        <circle cx="620" cy="340" r="130" fill="rgba(56,130,220,0.04)" stroke="#3882DC" stroke-width="2"/>
-        <!-- AICM - bottom center -->
-        <circle cx="430" cy="370" r="110" fill="rgba(139,92,246,0.04)" stroke="#8B5CF6" stroke-width="2"/>
+        <!-- TEAL — Fintech & Training, top-left -->
+        <circle cx="300" cy="195" r="158" fill="rgba(21,197,193,0.04)" stroke="#15C5C1" stroke-width="1.4" stroke-opacity="0.65"/>
+        <!-- GOLD — Construction, top-right -->
+        <circle cx="560" cy="195" r="158" fill="rgba(183,146,74,0.04)" stroke="#B7924A" stroke-width="1.4" stroke-opacity="0.65"/>
+        <!-- GREEN — Energy & Climate, bottom-left -->
+        <circle cx="242" cy="345" r="132" fill="rgba(34,197,94,0.04)" stroke="#22C55E" stroke-width="1.4" stroke-opacity="0.65"/>
+        <!-- BLUE — Aviation & Logistics, bottom-right -->
+        <circle cx="618" cy="345" r="132" fill="rgba(56,130,220,0.04)" stroke="#3882DC" stroke-width="1.4" stroke-opacity="0.65"/>
+        <!-- PURPLE — AICM, bottom-center -->
+        <circle cx="430" cy="372" r="112" fill="rgba(139,92,246,0.04)" stroke="#8B5CF6" stroke-width="1.4" stroke-opacity="0.65"/>
 
         <!-- Center glow -->
-        <circle cx="430" cy="255" r="90" fill="url(#gc)"/>
-        <circle cx="430" cy="255" r="58" fill="rgba(183,146,74,0.08)" stroke="rgba(183,146,74,0.35)" stroke-width="1" filter="url(#glow)"/>
+        <circle cx="430" cy="262" r="95" fill="url(#gc)"/>
+        <circle cx="430" cy="262" r="66" fill="rgba(183,146,74,0.15)" stroke="#e8c97a" stroke-width="1.5" stroke-opacity="0.6" filter="url(#glow)"/>
 
-        <!-- Center label -->
-        <text x="430" y="244" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#B7924A" font-style="italic">Profound</text>
-        <text x="430" y="262" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#B7924A" font-style="italic">Knowledge</text>
-        <text x="430" y="279" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#aaa" letter-spacing="0.06em">THE GROWING CORE</text>
+        <!-- PROFOUND KNOWLEDGE — large, gold, italic, prominent -->
+        <text x="430" y="246" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#f0d080" font-style="italic">Profound</text>
+        <text x="430" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#f0d080" font-style="italic">Knowledge</text>
+        <text x="430" y="288" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#888" letter-spacing="0.12em">THE GROWING CORE</text>
 
-        <!-- FINTECH / TRAINING label - top left -->
-        <text x="248" y="148" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em" text-transform="uppercase">FINTECH &amp; TRAINING</text>
-        <text x="248" y="166" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">RewmoAI</text>
-        <text x="248" y="181" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">LeanAI Lab</text>
+        <!-- FINTECH & TRAINING — top-left, centered high in circle -->
+        <text x="255" y="108" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4DE8E4" letter-spacing="0.09em" font-weight="700">FINTECH &amp; TRAINING</text>
+        <text x="255" y="128" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">RewmoAI</text>
+        <text x="255" y="146" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">LeanAI Lab</text>
 
-        <!-- CONSTRUCTION label - top right -->
-        <text x="612" y="148" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em">CONSTRUCTION</text>
-        <text x="612" y="166" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">ProjMgt.AI</text>
-        <text x="612" y="181" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">CarrierAuditAI</text>
+        <!-- CONSTRUCTION — top-right, centered high in circle -->
+        <text x="605" y="108" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#d4aa6a" letter-spacing="0.09em" font-weight="700">CONSTRUCTION</text>
+        <text x="605" y="128" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">ProjMgt.AI</text>
+        <text x="605" y="146" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">CarrierAuditAI</text>
 
-        <!-- ENERGY label - bottom left -->
-        <text x="185" y="358" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em">ENERGY &amp; CLIMATE</text>
-        <text x="185" y="375" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">LeafPAYS</text>
+        <!-- ENERGY & CLIMATE — bottom-left, centered low in circle -->
+        <text x="196" y="388" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4ade80" letter-spacing="0.09em" font-weight="700">ENERGY &amp; CLIMATE</text>
+        <text x="196" y="407" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">LeafPAYS</text>
 
-        <!-- AVIATION / LOGISTICS label - bottom right -->
-        <text x="672" y="358" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#B7924A" letter-spacing="0.07em">AVIATION &amp; LOGISTICS</text>
-        <text x="672" y="375" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">CarrierAuditAI</text>
-        <text x="672" y="390" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">Supply Chain AI</text>
+        <!-- AVIATION & LOGISTICS — bottom-right, centered low in circle -->
+        <text x="664" y="382" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#60a5fa" letter-spacing="0.09em" font-weight="700">AVIATION &amp; LOGISTICS</text>
+        <text x="664" y="401" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">CarrierAuditAI</text>
+        <text x="664" y="419" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#cccccc">Supply Chain AI</text>
 
-        <!-- AICM label - bottom center -->
-        <text x="430" y="450" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8880d4" letter-spacing="0.07em">AICM â€” SECURITY LAYER</text>
-        <text x="430" y="466" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#999">Open Source Â· All Verticals</text>
+        <!-- AICM — bottom-center, inside purple circle -->
+        <text x="430" y="455" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#c4b5fd" letter-spacing="0.09em" font-weight="700">AICM — SECURITY LAYER</text>
+        <text x="430" y="472" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#888">Open Source · All Verticals</text>
 
-        <!-- Connector dots at intersections -->
-        <circle cx="383" cy="210" r="3" fill="rgba(183,146,74,0.4)"/>
-        <circle cx="477" cy="210" r="3" fill="rgba(183,146,74,0.4)"/>
-        <circle cx="350" cy="300" r="3" fill="rgba(183,146,74,0.4)"/>
-        <circle cx="510" cy="300" r="3" fill="rgba(183,146,74,0.4)"/>
-        <circle cx="430" cy="330" r="3" fill="rgba(183,146,74,0.4)"/>
+        <!-- Intersection dots -->
+        <circle cx="383" cy="218" r="2.5" fill="rgba(240,208,128,0.7)"/>
+        <circle cx="477" cy="218" r="2.5" fill="rgba(240,208,128,0.7)"/>
+        <circle cx="348" cy="308" r="2.5" fill="rgba(240,208,128,0.7)"/>
+        <circle cx="512" cy="308" r="2.5" fill="rgba(240,208,128,0.7)"/>
+        <circle cx="430" cy="338" r="2.5" fill="rgba(240,208,128,0.7)"/>
       </svg>
     </div>
-    <p style="font-family:sans-serif;font-size:13px;color:#999;line-height:1.7;border-left:2px solid rgba(183,146,74,.25);padding-left:20px;max-width:680px">Each vertical feeds intelligence into the center. Shared AI infrastructure, military-grade methodology, and compounding domain expertise create a core that grows stronger with every agent deployed. This is not a portfolio of separate companies â€” it's a system designed to converge.</p>
+    <p style="font-family:sans-serif;font-size:13px;color:#444;line-height:1.7;border-left:2px solid rgba(183,146,74,.25);padding-left:20px;max-width:680px">Each vertical feeds intelligence into the center. Shared AI infrastructure, military-grade methodology, and compounding domain expertise create a core that grows stronger with every agent deployed. This is not a portfolio of separate companies — it's a system designed to converge.</p>
   </div>
 </section>
 
 <!-- AGENTS -->
 <section id="agents" style="border-top:1px solid rgba(255,255,255,.06);background:#0f0f0f">
   <div class="section-inner">
-    <div class="section-tag">â—† &nbsp;The Agent Constellation</div>
+    <div class="section-tag">◆ &nbsp;The Agent Constellation</div>
     <h2>Seven Products. One Architecture.</h2>
     <p class="section-sub">Every agent is built on the same Next.js 14 + Firebase + Vercel stack, secured by AICM, and grounded in 40+ years of operational domain expertise.</p>
 
@@ -196,12 +195,12 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
       <!-- REWMO -->
       <a class="v-card" href="https://rewmo.ai" target="_blank">
-        <div class="v-card-icon">â—ˆ</div>
-        <div class="status live">Live Â· Rebuilding</div>
-        <div class="v-card-tag">Fintech Â· Payments Â· Rewards</div>
+        <div class="v-card-icon">◈</div>
+        <div class="status live">Live · Rebuilding</div>
+        <div class="v-card-tag">Fintech · Payments · Rewards</div>
         <div class="v-card-name">RewmoAI</div>
         <div class="v-card-domain">rewmo.ai</div>
-        <div class="v-card-body">Shopping rewards, referral engine, and Stripe-gated PRO tier â€” rebuilt clean on Next.js 14 App Router + Firebase. Turning everyday consumer activity into compounding financial advantage.</div>
+        <div class="v-card-body">Shopping rewards, referral engine, and Stripe-gated PRO tier — rebuilt clean on Next.js 14 App Router + Firebase. Turning everyday consumer activity into compounding financial advantage.</div>
         <div class="v-card-link">Visit rewmo.ai</div>
         <div class="sub-products">
           <span class="sub-pill">Shopping &amp; Rewards</span>
@@ -212,9 +211,9 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
       <!-- LEANAI LAB -->
       <a class="v-card" href="https://learnai.centriv.ai" target="_blank">
-        <div class="v-card-icon">â—Ž</div>
+        <div class="v-card-icon">◎</div>
         <div class="status live">Live</div>
-        <div class="v-card-tag">AI Training Â· Implementation Â· Audit</div>
+        <div class="v-card-tag">AI Training · Implementation · Audit</div>
         <div class="v-card-name">LeanAI Lab</div>
         <div class="v-card-domain">learnai.centriv.ai</div>
         <div class="v-card-body">Lean + AI implementation training with a built-in Implementation Audit engine. Free and PRO tiers, Stripe-gated modules, and Claude API integration. The only AI training platform that audits whether you're actually applying what you learn.</div>
@@ -228,12 +227,12 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
       <!-- PROJMGT -->
       <a class="v-card" href="https://projmgt.ai" target="_blank">
-        <div class="v-card-icon">â–£</div>
+        <div class="v-card-icon">▣</div>
         <div class="status live">Live</div>
-        <div class="v-card-tag">Construction Â· Infrastructure Â· Federal</div>
+        <div class="v-card-tag">Construction · Infrastructure · Federal</div>
         <div class="v-card-name">ProjMgt.AI</div>
         <div class="v-card-domain">projmgt.ai</div>
-        <div class="v-card-body">AI agents for construction estimating and project intelligence. Multi-PDF scope extraction, inline Feedback UI review, auto-generated RFIs across six categories, and Agent F â€” 23 rule-based constructability checks across eight categories. USACE-aligned.</div>
+        <div class="v-card-body">AI agents for construction estimating and project intelligence. Multi-PDF scope extraction, inline Feedback UI review, auto-generated RFIs across six categories, and Agent F — 23 rule-based constructability checks across eight categories. USACE-aligned.</div>
         <div class="v-card-link">Visit projmgt.ai</div>
         <div class="sub-products">
           <span class="sub-pill">Multi-PDF Extraction</span>
@@ -244,9 +243,9 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
       <!-- LEAFPAYS -->
       <a class="v-card" href="https://leafpays.com" target="_blank">
-        <div class="v-card-icon">â—‰</div>
+        <div class="v-card-icon">◉</div>
         <div class="status live">Active</div>
-        <div class="v-card-tag">Energy Â· Climate Â· ESG</div>
+        <div class="v-card-tag">Energy · Climate · ESG</div>
         <div class="v-card-name">LeafPAYS</div>
         <div class="v-card-domain">leafpays.com</div>
         <div class="v-card-body">Carbon tracking, ESG scoring, flare-gas-to-fuel optimization, and clean energy transition planning. Built on 50+ vessel LNG supply chain experience from the Gorgon mega-project. One AI-powered platform for the full energy transition stack.</div>
@@ -260,15 +259,15 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
       <!-- AVIATION -->
       <a class="v-card" href="https://www.centriv.ai/aviation.html" target="_blank">
-        <div class="v-card-icon">â–³</div>
+        <div class="v-card-icon">△</div>
         <div class="status building">Building</div>
-        <div class="v-card-tag">Aviation Â· Aerospace Â· Carrier Ops</div>
+        <div class="v-card-tag">Aviation · Aerospace · Carrier Ops</div>
         <div class="v-card-name">Aviation AI</div>
         <div class="v-card-domain">centriv.ai/aviation</div>
-        <div class="v-card-body">Predictive maintenance, crew scheduling, safety compliance, and MRO optimization â€” built on 40+ years of flight operations spanning Naval Aviation to theater-level command. ATP multiengine and commercial helicopter rated.</div>
+        <div class="v-card-body">Predictive maintenance, crew scheduling, safety compliance, and MRO optimization — built on 40+ years of flight operations spanning Naval Aviation to theater-level command. ATP multiengine and commercial helicopter rated.</div>
         <div class="v-card-link">Explore aviation agents</div>
         <div class="sub-products">
-          <span class="sub-pill">CarrierAuditAI â†—</span>
+          <span class="sub-pill">CarrierAuditAI ↗</span>
           <span class="sub-pill">MRO Optimization</span>
           <span class="sub-pill">Safety Compliance</span>
         </div>
@@ -276,9 +275,9 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
       <!-- LOGISTICS -->
       <a class="v-card" href="https://www.centriv.ai/defense.html" target="_blank">
-        <div class="v-card-icon">â¬¡</div>
+        <div class="v-card-icon">⬡</div>
         <div class="status building">Building</div>
-        <div class="v-card-tag">Defense Â· Maritime Â· Supply Chain</div>
+        <div class="v-card-tag">Defense · Maritime · Supply Chain</div>
         <div class="v-card-name">Logistics AI</div>
         <div class="v-card-domain">centriv.ai/defense</div>
         <div class="v-card-body">Theater-level logistics, fleet optimization, Lean/Six Sigma AI, and military-grade supply chain planning. Born from LOGCAP III, Gorgon LNG, and a $600M savings methodology forged in combat operations.</div>
@@ -291,18 +290,18 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
       </a>
 
       <!-- AICM -->
-      <a class="v-card" href="https://github.com/GReinhold-ai/aicm" target="_blank">
-        <div class="v-card-icon">â—‡</div>
+      <a class="v-card" href="https://github.com/GReinhold-ai/aicm" target="_blank" style="grid-column:1/-1;max-width:420px;">
+        <div class="v-card-icon">◇</div>
         <div class="status oss">Open Source</div>
-        <div class="v-card-tag">Agent Security Â· Compliance Â· OSS</div>
+        <div class="v-card-tag">Agent Security · Compliance · OSS</div>
         <div class="v-card-name">AICM</div>
         <div class="v-card-domain">github.com/GReinhold-ai/aicm</div>
-        <div class="v-card-body">The security layer that monitors all Centriv agents â€” and yours. Detects skill-injection attacks, credential theft, and prompt hijacking. Auto-quarantines compromised agents. Free, open source, deployable across any AI stack.</div>
+        <div class="v-card-body">The security layer that monitors all Centriv agents — and yours. Detects skill-injection attacks, credential theft, and prompt hijacking. Auto-quarantines compromised agents. Free, open source, deployable across any AI stack.</div>
         <div class="v-card-link">Explore AICM on GitHub</div>
         <div class="sub-products">
           <span class="sub-pill">Skill-Injection Detection</span>
           <span class="sub-pill">Auto-Quarantine</span>
-          <span class="sub-pill">Free Â· OSS</span>
+          <span class="sub-pill">Free · OSS</span>
         </div>
       </a>
 
@@ -313,19 +312,19 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 <!-- METHODOLOGY -->
 <section id="methodology" style="border-top:1px solid rgba(255,255,255,.06)">
   <div class="section-inner">
-    <div class="section-tag">â—† &nbsp;The Centriv Methodology</div>
+    <div class="section-tag">◆ &nbsp;The Centriv Methodology</div>
     <h2>Built on Deming. Forged in Combat.</h2>
     <p class="section-sub">Every Centriv agent carries embedded operational doctrine from 40+ years of military service, aviation, and industrial operations.</p>
     <div class="method-grid">
       <div class="method-item">
         <div class="method-num">01</div>
         <div class="method-title">Systems Thinking</div>
-        <div class="method-body">The Reinhold Model â€” cross-functional process interaction designed at HQMC. Now applied to multi-agent AI system design.</div>
+        <div class="method-body">The Reinhold Model — cross-functional process interaction designed at HQMC. Now applied to multi-agent AI system design.</div>
       </div>
       <div class="method-item">
         <div class="method-num">02</div>
         <div class="method-title">Knowledge of Variation</div>
-        <div class="method-body">Lean, Kaizen, Six Sigma â€” understanding variation across supply chains, construction timelines, and financial systems.</div>
+        <div class="method-body">Lean, Kaizen, Six Sigma — understanding variation across supply chains, construction timelines, and financial systems.</div>
       </div>
       <div class="method-item">
         <div class="method-num">03</div>
@@ -335,17 +334,17 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
       <div class="method-item">
         <div class="method-num">04</div>
         <div class="method-title">Psychology</div>
-        <div class="method-body">Understanding how people and organizations adopt change. TQL, Baldrige, and Deming â€” applied to AI agent deployment in regulated environments.</div>
+        <div class="method-body">Understanding how people and organizations adopt change. TQL, Baldrige, and Deming — applied to AI agent deployment in regulated environments.</div>
       </div>
     </div>
     <div class="creds">
-      <span class="cred">U.S. Marine Corps â€” Combat Tour, Desert Storm</span>
-      <span class="cred">ATP Fixed Wing Â· Commercial Rotor Wing</span>
+      <span class="cred">U.S. Marine Corps — Combat Tour, Desert Storm</span>
+      <span class="cred">ATP Fixed Wing · Commercial Rotor Wing</span>
       <span class="cred">Naval Aviation Safety Officer School</span>
-      <span class="cred">KBR â€” Director, Theater Aviation ($5.4B)</span>
-      <span class="cred">Gorgon LNG â€” Supply Chain, 50+ Vessels</span>
-      <span class="cred">MBA, Chapman University â€” Int'l Finance</span>
-      <span class="cred">Deming Â· Baldrige Â· TQL Â· Lean / Six Sigma</span>
+      <span class="cred">KBR — Director, Theater Aviation ($5.4B)</span>
+      <span class="cred">Gorgon LNG — Supply Chain, 50+ Vessels</span>
+      <span class="cred">MBA, Chapman University — Int'l Finance</span>
+      <span class="cred">Deming · Baldrige · TQL · Lean / Six Sigma</span>
     </div>
   </div>
 </section>
@@ -353,16 +352,16 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 <!-- FOUNDER -->
 <section style="border-top:1px solid rgba(255,255,255,.06);background:#0f0f0f">
   <div class="section-inner">
-    <div class="section-tag">â—† &nbsp;Founder</div>
+    <div class="section-tag">◆ &nbsp;Founder</div>
     <div class="founder-wrap">
       <div>
         <div class="founder-label">Founder &amp; CEO</div>
         <div class="founder-name">Gary Reinhold</div>
         <div class="founder-sub">Centriv.ai</div>
-        <a class="founder-link" href="https://www.centriv.ai/founder.html">View Full Bio â†’</a>
+        <a class="founder-link" href="https://www.centriv.ai/founder.html">View Full Bio →</a>
       </div>
       <div class="founder-body">
-        40+ years building and leading across military, aviation, construction, energy, and finance. From combat logistics in Desert Storm to managing $5.4 billion programs at KBR, from scheduling 50+ vessels on the Gorgon LNG mega-project to bootstrapping seven AI products under one architecture â€” Gary builds AI agents the way he built everything else: with doctrine, discipline, and domain expertise that no lab can replicate.
+        40+ years building and leading across military, aviation, construction, energy, and finance. From combat logistics in Desert Storm to managing $5.4 billion programs at KBR, from scheduling 50+ vessels on the Gorgon LNG mega-project to bootstrapping seven AI products under one architecture — Gary builds AI agents the way he built everything else: with doctrine, discipline, and domain expertise that no lab can replicate.
       </div>
     </div>
   </div>
@@ -370,15 +369,13 @@ footer{padding:24px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 
 <!-- CTA -->
 <div class="cta-wrap">
-  <div class="section-tag" style="text-align:center">â—† &nbsp;Get Involved</div>
+  <div class="section-tag" style="text-align:center">◆ &nbsp;Get Involved</div>
   <h2 style="text-align:center;margin-bottom:12px">The Center is <em>Growing</em></h2>
-  <p style="font-family:sans-serif;font-size:14px;color:#aaa;text-align:center;max-width:480px;margin:0 auto 32px;line-height:1.7">Whether you're an investor, enterprise partner, or developer â€” Centriv.ai is building the future of domain-expert AI agents.</p>
-  <div style="text-align:center"><a class="cta-btn" href="/cdn-cgi/l/email-protection#3d54535b527d5e5853494f544b135c54">Start the Conversation â†’</a></div>
+  <p style="font-family:sans-serif;font-size:14px;color:#666;text-align:center;max-width:480px;margin:0 auto 32px;line-height:1.7">Whether you're an investor, enterprise partner, or developer — Centriv.ai is building the future of domain-expert AI agents.</p>
+  <div style="text-align:center"><a class="cta-btn" href="/cdn-cgi/l/email-protection#3d54535b527d5e5853494f544b135c54">Start the Conversation →</a></div>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">CENTRIV<span>.ai</span></div>
   <div class="footer-copy
-
-
