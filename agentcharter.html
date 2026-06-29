@@ -918,7 +918,7 @@
     <a href="#request" class="btn-outline">Inquire About Acquisition</a>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num">7</div><div class="label">Live Agents Available</div></div>
+    <div class="hero-stat"><div class="num">6</div><div class="label">Live Agents Available</div></div>
     <div class="hero-stat"><div class="num">3</div><div class="label">Ways to Engage</div></div>
     <div class="hero-stat"><div class="num">$5.4B</div><div class="label">Programs Managed</div></div>
     <div class="hero-stat"><div class="num">AICM</div><div class="label">Open Source Security Standard</div></div>
@@ -1342,6 +1342,7 @@
     leafpays: {
       name: "LeafPAYS",
       tagline: "Green-rewards super-app (LeafTech) + RNG heavy-truck logistics",
+      econHeader: "Value economics · per user / per truck",
       vertical: "Energy & ESG · Consumer + Logistics",
       stage: "MVP · bootstrapped",
       provisional: true,
@@ -1367,6 +1368,7 @@
     carrier: {
       name: "CarrierAudit.AI",
       tagline: "Aviation safety, audit & operations intelligence — multi-sided platform (operators, fleets, government, insurers)",
+      econHeader: "Value economics · by segment",
       vertical: "Aviation & Aerospace",
       stage: "Demonstration",
       provisional: true,
@@ -1392,6 +1394,7 @@
     lng: {
       name: "LNGBridgeAI",
       tagline: "Flared-gas → LNG/H2 fuel supply + heavy-truck fleet ops + AI origination",
+      econHeader: "Unit economics",
       vertical: "Energy · Trucking · Industrial Transition",
       stage: "Demonstration",
       provisional: true,
@@ -1417,6 +1420,7 @@
     rewmo: {
       name: "RewmoAI",
       tagline: "Turns rent, loans & everyday payments into rewards, credit, and home-down-payment savings",
+      econHeader: "Value economics · per user",
       vertical: "Fintech & Banking · Consumer",
       stage: "MVP · bootstrapped",
       provisional: true,
@@ -1531,7 +1535,7 @@
         '<div><div class="val-k">Indicative \u00b7 today</div><div class="val-fig today" style="font-size:1.5rem">'+rEsc(d.today)+'</div><div class="val-sub">'+rEsc(d.todaySub)+'</div></div>'+
         '<div class="leadercard"><div class="val-k">Leader potential</div><div class="val-fig leader" style="font-size:1.5rem">'+rEsc(d.leader)+'</div><div class="val-sub">'+rEsc(d.leaderSub)+'</div></div>'+
       '</div>'+
-      '<div class="report-h">Value economics \u00b7 per customer</div>'+
+      '<div class="report-h">'+(d.econHeader||'Value economics \u00b7 per customer')+'</div>'+
       '<div class="report-econ">'+econ+'</div>'+
       '<div class="report-h">Valuation ladder \u00b7 by maturity tier</div>'+
       rLadder(d.ladder)+
