@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -495,58 +495,6 @@
     .val-pending p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.2rem; line-height: 1.7; }
     .val-pending a { font-size: 0.76rem; font-weight: 600; color: var(--accent-gold); text-decoration: none; }
 
-
-    /* ── FULL VALUATION REPORT MODAL (added) ── */
-    .val-report { background: none; border: none; padding: 0; cursor: pointer; font-family: 'Outfit', sans-serif; }
-    .report-overlay {
-      position: fixed; inset: 0; z-index: 200;
-      display: none; align-items: flex-start; justify-content: center;
-      background: rgba(5,7,10,0.80); backdrop-filter: blur(6px);
-      padding: 4rem 1.5rem; overflow-y: auto;
-    }
-    .report-overlay.open { display: flex; }
-    .report-modal {
-      background: var(--bg-card); border: 1px solid var(--accent-gold-border);
-      border-radius: 4px; max-width: 760px; width: 100%;
-      position: relative; animation: reportIn 0.3s ease;
-    }
-    @keyframes reportIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .report-close {
-      position: absolute; top: 1rem; right: 1rem; width: 34px; height: 34px;
-      border: 1px solid var(--border-subtle); background: var(--bg-deep);
-      color: var(--text-secondary); border-radius: 3px; cursor: pointer;
-      font-size: 1.2rem; line-height: 1; display: flex; align-items: center; justify-content: center;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .report-close:hover { color: var(--accent-gold); border-color: var(--accent-gold-border); }
-    .report-body { padding: 2.4rem 2.4rem 2rem; }
-    .report-eyebrow { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
-    .report-rule { border: none; border-top: 2px solid var(--accent-gold); margin: 0.9rem 0 1.4rem; width: 48px; }
-    .report-name { font-family: 'DM Serif Display', serif; font-size: 2.1rem; line-height: 1.05; color: var(--text-primary); margin-bottom: 0.3rem; }
-    .report-tagline { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.9rem; }
-    .report-meta { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; margin-bottom: 1.8rem; }
-    .report-vert { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
-    .report-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.4rem; }
-    .report-hero > div { background: var(--bg-deep); border: 1px solid var(--border-subtle); border-radius: 3px; padding: 1.1rem 1.2rem; }
-    .report-hero .leadercard { border-color: var(--accent-gold-border); }
-    .report-h { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-gold); margin: 1.8rem 0 1rem; }
-    .report-econ { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: 3px; overflow: hidden; }
-    .report-econ > div { background: var(--bg-deep); padding: 0.9rem 1rem; }
-    .report-upside { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
-    .report-upside > div { background: var(--bg-deep); border: 1px solid var(--border-subtle); border-radius: 3px; padding: 1rem; }
-    .report-upside .hot { border-color: var(--accent-gold-border); }
-    .report-comps { font-size: 0.9rem; color: var(--text-primary); font-weight: 500; margin-bottom: 0.5rem; }
-    .report-comps b { color: var(--accent-gold); font-weight: 600; }
-    .report-note { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.7; }
-    .report-method { font-size: 0.72rem; color: var(--text-muted); line-height: 1.7; margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--border-subtle); }
-    .report-modal .val-ladder { height: 120px; }
-    @media (max-width: 640px) {
-      .report-hero { grid-template-columns: 1fr; }
-      .report-econ { grid-template-columns: 1fr; }
-      .report-upside { grid-template-columns: 1fr; }
-      .report-body { padding: 2rem 1.4rem 1.6rem; }
-    }
-
     /* ── CUSTOM BUILD ── */
     .custom-section { padding: 5rem 0; }
 
@@ -918,7 +866,7 @@
     <a href="#request" class="btn-outline">Inquire About Acquisition</a>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num">6</div><div class="label">Live Agents Available</div></div>
+    <div class="hero-stat"><div class="num">7</div><div class="label">Live Agents Available</div></div>
     <div class="hero-stat"><div class="num">3</div><div class="label">Ways to Engage</div></div>
     <div class="hero-stat"><div class="num">$5.4B</div><div class="label">Programs Managed</div></div>
     <div class="hero-stat"><div class="num">AICM</div><div class="label">Open Source Security Standard</div></div>
@@ -992,7 +940,7 @@
             <div class="val-rung"><span class="bv">$70M</span><div class="bar" style="height:54px"></div></div>
           </div>
           <div class="val-rung-labels"><span>MVP</span><span class="now">Demo</span><span>Traction</span><span>Scale</span><span>Leader</span></div>
-          <button class="val-report" type="button" data-report="projmgt">See full valuation report ↗</button>
+          <a class="val-report" href="#" target="_blank" rel="noopener">See full valuation report ↗</a>
           <div class="val-method">Triangulated · Agent Capital method · AICM certified</div>
         </div>
       </div>
@@ -1007,27 +955,13 @@
           <button class="agent-tab" role="tab" id="t-val-rewmo" aria-controls="val-rewmo" aria-selected="false">Valuation Report</button>
         </div>
         <div class="agent-panel" id="ov-rewmo" role="tabpanel" aria-labelledby="t-ov-rewmo">
-          <div class="agent-desc">Turns recurring payments — rent, utilities, car and student loans — into rewards, credit-building, and home-down-payment savings. Generative-AI reward optimization with zero transaction fees, plus banking and partner integrations. Now bootstrapping a focused first release.</div>
+          <div class="agent-desc">Financial operations infrastructure and AI-powered training tools for project managers and operations leaders. Stripe-gated course modules, embedded finance workflows, and compliance-ready output for regulated environments.</div>
           <a class="agent-link" href="https://rewmo.ai" target="_blank" rel="noopener">Visit rewmo.ai →</a>
         </div>
-        <div class="agent-panel" id="val-rewmo" role="tabpanel" aria-labelledby="t-val-rewmo" hidden>
-          <span class="val-stage">MVP · bootstrapped · first-pass</span>
-          <div class="val-top">
-            <div><div class="val-k">Indicative · today</div><div class="val-fig today">$1.5M – $3.0M</div><div class="val-sub">bootstrapped restart, smaller scope</div></div>
-            <div><div class="val-k">Leader potential</div><div class="val-fig leader">$150M</div><div class="val-sub">consumer fintech · ~500K users</div></div>
-          </div>
-          <div class="val-metrics"><span>Value created / user <b>$300/yr</b></span><span>Revenue / user <b>$60/yr</b></span></div>
-          <div class="val-ladder-cap">Valuation ladder · base case</div>
-          <div class="val-ladder">
-            <div class="val-rung now"><span class="bv">$1.5M</span><div class="bar" style="height:13px"></div></div>
-            <div class="val-rung"><span class="bv">$3M</span><div class="bar" style="height:15px"></div></div>
-            <div class="val-rung"><span class="bv">$12M</span><div class="bar" style="height:21px"></div></div>
-            <div class="val-rung"><span class="bv">$45M</span><div class="bar" style="height:33px"></div></div>
-            <div class="val-rung"><span class="bv">$150M</span><div class="bar" style="height:54px"></div></div>
-          </div>
-          <div class="val-rung-labels"><span class="now">MVP</span><span>Demo</span><span>Traction</span><span>Scale</span><span>Leader</span></div>
-          <button class="val-report" type="button" data-report="rewmo">See full valuation report ↗</button>
-          <div class="val-method">Consumer-fintech lens · first-pass inputs</div>
+        <div class="agent-panel val-pending" id="val-rewmo" role="tabpanel" aria-labelledby="t-val-rewmo" hidden>
+          <div class="h">Valuation in modeling</div>
+          <p>An Agent Capital valuation report for RewmoAI is being prepared using the AgentCharter framework.</p>
+          <a href="#request">Request the valuation report ↗</a>
         </div>
       </div>
 
@@ -1041,21 +975,13 @@
           <button class="agent-tab" role="tab" id="t-val-leafpays" aria-controls="val-leafpays" aria-selected="false">Valuation Report</button>
         </div>
         <div class="agent-panel" id="ov-leafpays" role="tabpanel" aria-labelledby="t-ov-leafpays">
-          <div class="agent-desc">Consumer green-rewards super-app (LeafTech): earn LeafPays Coins for low-carbon choices, redeem for rewards and cash back — plus a renewable-natural-gas (RNG) heavy-truck logistics operation in US freight corridors. Now bootstrapping both legs.</div>
+          <div class="agent-desc">Carbon tracking, ESG scoring, and flare-gas-to-fuel optimization for energy operations. Connects field workflows to financial reporting with audit-ready ESG output. Built on Gorgon LNG and large-scale energy project experience.</div>
           <a class="agent-link" href="https://leafpays.com" target="_blank" rel="noopener">Visit leafpays.com →</a>
         </div>
-        <div class="agent-panel" id="val-leafpays" role="tabpanel" aria-labelledby="t-val-leafpays" hidden>
-          <span class="val-stage">MVP · bootstrapped · first-pass</span>
-          <div class="val-top">
-            <div><div class="val-k">Indicative · today</div><div class="val-fig today">$2M – $4M</div><div class="val-sub">both legs early, bootstrapped</div></div>
-            <div><div class="val-k">Leader potential</div><div class="val-fig leader">$85M</div><div class="val-sub">rewards app + RNG fleet</div></div>
-          </div>
-          <div class="val-metrics"><span>Rewards value / user <b>$150/yr</b></span><span>RNG fleet rev <b>$180K/truck</b></span></div>
-          <div class="val-ladder-cap">Valuation ladder · base case</div>
-          <div class="val-ladder"><div class="val-rung now"><span class="bv">$2.5M</span><div class="bar" style="height:16px"></div></div><div class="val-rung"><span class="bv">$5M</span><div class="bar" style="height:19px"></div></div><div class="val-rung"><span class="bv">$16M</span><div class="bar" style="height:28px"></div></div><div class="val-rung"><span class="bv">$38M</span><div class="bar" style="height:39px"></div></div><div class="val-rung"><span class="bv">$85M</span><div class="bar" style="height:54px"></div></div></div>
-          <div class="val-rung-labels"><span class="now">MVP</span><span class="">Demo</span><span class="">Traction</span><span class="">Scale</span><span class="">Leader</span></div>
-          <button class="val-report" type="button" data-report="leafpays">See full valuation report ↗</button>
-          <div class="val-method">Consumer + logistics lens · first-pass</div>
+        <div class="agent-panel val-pending" id="val-leafpays" role="tabpanel" aria-labelledby="t-val-leafpays" hidden>
+          <div class="h">Valuation in modeling</div>
+          <p>An Agent Capital valuation report for LeafPAYS is being prepared using the AgentCharter framework.</p>
+          <a href="#request">Request the valuation report ↗</a>
         </div>
       </div>
 
@@ -1069,21 +995,13 @@
           <button class="agent-tab" role="tab" id="t-val-carrier" aria-controls="val-carrier" aria-selected="false">Valuation Report</button>
         </div>
         <div class="agent-panel" id="ov-carrier" role="tabpanel" aria-labelledby="t-ov-carrier">
-          <div class="agent-desc">Aviation safety, audit, and operations intelligence — automated Part 135 / 121 safety audits, ASIAS incident cross-reference, predictive maintenance, crew scheduling, and MRO optimization. One safety-data platform serving operators, regional and charter fleets, government aviation, and insurers. Built by an ATP-rated Naval Aviation Safety Officer with 40+ years of flight ops.</div>
+          <div class="agent-desc">Part 135 charter carrier safety audits — automated checklists, ASIAS incident cross-reference, and audit report generation. Built by an ATP-rated Naval Aviation Safety Officer with 40+ years flight ops experience.</div>
           <a class="agent-link" href="https://carrieraudit.ai" target="_blank" rel="noopener">Visit carrieraudit.ai →</a>
         </div>
-        <div class="agent-panel" id="val-carrier" role="tabpanel" aria-labelledby="t-val-carrier" hidden>
-          <span class="val-stage">Demonstration · first-pass</span>
-          <div class="val-top">
-            <div><div class="val-k">Indicative · today</div><div class="val-fig today">$5M – $8M</div><div class="val-sub">gov wedge via LOGCAP heritage</div></div>
-            <div><div class="val-k">Leader potential</div><div class="val-fig leader">$310M</div><div class="val-sub">$44.7M ARR × ~7×</div></div>
-          </div>
-          <div class="val-metrics"><span>Leader ARR <b>$44.7M</b></span><span>Gov / defense ARPU <b>$300K</b></span></div>
-          <div class="val-ladder-cap">Valuation ladder · base case</div>
-          <div class="val-ladder"><div class="val-rung"><span class="bv">$4M</span><div class="bar" style="height:13px"></div></div><div class="val-rung now"><span class="bv">$7M</span><div class="bar" style="height:15px"></div></div><div class="val-rung"><span class="bv">$25M</span><div class="bar" style="height:21px"></div></div><div class="val-rung"><span class="bv">$95M</span><div class="bar" style="height:33px"></div></div><div class="val-rung"><span class="bv">$310M</span><div class="bar" style="height:54px"></div></div></div>
-          <div class="val-rung-labels"><span class="">MVP</span><span class="now">Demo</span><span class="">Traction</span><span class="">Scale</span><span class="">Leader</span></div>
-          <button class="val-report" type="button" data-report="carrier">See full valuation report ↗</button>
-          <div class="val-method">Multi-sided data-platform lens · first-pass</div>
+        <div class="agent-panel val-pending" id="val-carrier" role="tabpanel" aria-labelledby="t-val-carrier" hidden>
+          <div class="h">Valuation in modeling</div>
+          <p>An Agent Capital valuation report for CarrierAudit.AI is being prepared using the AgentCharter framework.</p>
+          <a href="#request">Request the valuation report ↗</a>
         </div>
       </div>
 
@@ -1097,21 +1015,13 @@
           <button class="agent-tab" role="tab" id="t-val-lng" aria-controls="val-lng" aria-selected="false">Valuation Report</button>
         </div>
         <div class="agent-panel" id="ov-lng" role="tabpanel" aria-labelledby="t-ov-lng">
-          <div class="agent-desc">Turns Permian flared gas into LNG/H2 transport fuel and runs the heavy-truck fleet that burns it — with AI for TCO analysis, market intelligence, and stranded-gas origination. Built on the LNG Bridge Fuel / Flare2Fuel models, Gorgon LNG, and LOGCAP III theater logistics.</div>
+          <div class="agent-desc">The AI platform enabling the transition from diesel to LNG. TCO analyzer, market intelligence, and stranded gas origination. Built on LOGCAP III theater logistics and Gorgon LNG supply chain experience.</div>
           <a class="agent-link" href="https://lngbridge.centriv.ai" target="_blank" rel="noopener">Visit lngbridge.centriv.ai →</a>
         </div>
-        <div class="agent-panel" id="val-lng" role="tabpanel" aria-labelledby="t-val-lng" hidden>
-          <span class="val-stage">Demonstration · first-pass</span>
-          <div class="val-top">
-            <div><div class="val-k">Indicative · today</div><div class="val-fig today">$18M – $40M</div><div class="val-sub">40-truck flare-to-fleet pilot</div></div>
-            <div><div class="val-k">Leader potential</div><div class="val-fig leader">$405M</div><div class="val-sub">full-buildout NPV@20%</div></div>
-          </div>
-          <div class="val-metrics"><span>Fuel margin <b>$1.55/gal</b></span><span>Per tractor <b>$200K/yr</b></span></div>
-          <div class="val-ladder-cap">Valuation ladder · base case</div>
-          <div class="val-ladder"><div class="val-rung"><span class="bv">$18M</span><div class="bar" style="height:18px"></div></div><div class="val-rung now"><span class="bv">$40M</span><div class="bar" style="height:22px"></div></div><div class="val-rung"><span class="bv">$120M</span><div class="bar" style="height:33px"></div></div><div class="val-rung"><span class="bv">$260M</span><div class="bar" style="height:45px"></div></div><div class="val-rung"><span class="bv">$405M</span><div class="bar" style="height:54px"></div></div></div>
-          <div class="val-rung-labels"><span class="">MVP</span><span class="now">Demo</span><span class="">Traction</span><span class="">Scale</span><span class="">Leader</span></div>
-          <button class="val-report" type="button" data-report="lng">See full valuation report ↗</button>
-          <div class="val-method">Energy-infra DCF/EBITDA lens · founder pro-formas</div>
+        <div class="agent-panel val-pending" id="val-lng" role="tabpanel" aria-labelledby="t-val-lng" hidden>
+          <div class="h">Valuation in modeling</div>
+          <p>An Agent Capital valuation report for LNGBridgeAI is being prepared using the AgentCharter framework.</p>
+          <a href="#request">Request the valuation report ↗</a>
         </div>
       </div>
 
@@ -1144,8 +1054,28 @@
             <div class="val-rung"><span class="bv">$243M</span><div class="bar" style="height:54px"></div></div>
           </div>
           <div class="val-rung-labels"><span>MVP</span><span class="now">Demo</span><span>Traction</span><span>Scale</span><span>Leader</span></div>
-          <button class="val-report" type="button" data-report="bidforge">See full valuation report ↗</button>
+          <a class="val-report" href="#" target="_blank" rel="noopener">See full valuation report ↗</a>
           <div class="val-method">Triangulated · Agent Capital method · AICM certified</div>
+        </div>
+      </div>
+
+      <!-- AviationOps — tabbed, valuation pending -->
+      <div class="agent-card has-tabs">
+        <div class="cert-badge cert-live"><span class="cert-dot"></span>Live · AICM Certified</div>
+        <div class="agent-vertical">Aviation &amp; Aerospace</div>
+        <div class="agent-name">AviationOps</div>
+        <div class="agent-tabs" role="tablist" aria-label="AviationOps views">
+          <button class="agent-tab" role="tab" id="t-ov-aviation" aria-controls="ov-aviation" aria-selected="true">Overview</button>
+          <button class="agent-tab" role="tab" id="t-val-aviation" aria-controls="val-aviation" aria-selected="false">Valuation Report</button>
+        </div>
+        <div class="agent-panel" id="ov-aviation" role="tabpanel" aria-labelledby="t-ov-aviation">
+          <div class="agent-desc">Predictive maintenance, crew scheduling, safety compliance, and MRO optimization — built on 40+ years of flight operations from Naval Aviation to theater-level command. ATP multiengine and commercial rotorwing experience embedded.</div>
+          <a class="agent-link" href="https://carrieraudit.ai" target="_blank" rel="noopener">Visit carrieraudit.ai →</a>
+        </div>
+        <div class="agent-panel val-pending" id="val-aviation" role="tabpanel" aria-labelledby="t-val-aviation" hidden>
+          <div class="h">Valuation in modeling</div>
+          <p>An Agent Capital valuation report for AviationOps is being prepared using the AgentCharter framework.</p>
+          <a href="#request">Request the valuation report ↗</a>
         </div>
       </div>
 
@@ -1292,15 +1222,6 @@
   </div>
 </footer>
 
-
-<!-- FULL VALUATION REPORT MODAL (added) -->
-<div class="report-overlay" id="reportOverlay" role="dialog" aria-modal="true" aria-labelledby="reportName" hidden>
-  <div class="report-modal">
-    <button class="report-close" id="reportClose" aria-label="Close valuation report">&times;</button>
-    <div class="report-body" id="reportBody"></div>
-  </div>
-</div>
-
 <script>
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
@@ -1335,239 +1256,6 @@
       });
     });
   });
-
-
-  // ── Full valuation report modal ──
-  const REPORTS = {
-    leafpays: {
-      name: "LeafPAYS",
-      tagline: "Green-rewards super-app (LeafTech) + RNG heavy-truck logistics",
-      econHeader: "Value economics · per user / per truck",
-      vertical: "Energy & ESG · Consumer + Logistics",
-      stage: "MVP · bootstrapped",
-      provisional: true,
-      today: "$2M – $4M", todaySub: "bootstrapped restart, both legs early",
-      leader: "$85M", leaderSub: "rewards app (~$40M) + RNG fleet (~$45M), if both scale",
-      econ: [
-        {k:"Rewards value / user", v:"$150/yr", s:"~$30 platform take", green:true},
-        {k:"Green-user base", v:"~300K", s:"leader case"},
-        {k:"RNG fleet revenue", v:"$180K/truck", s:"~5% freight margin"},
-        {k:"Fleet (start)", v:"50 trucks", s:"RNG logistics leg"}
-      ],
-      ladder: [
-        {t:"MVP", v:"$2.5M", n:2.5, now:true},
-        {t:"Demonstration", v:"$5M", n:5},
-        {t:"Early Traction", v:"$16M", n:16},
-        {t:"Scale", v:"$38M", n:38},
-        {t:"Leader", v:"$85M", n:85}
-      ],
-      upside: null,
-      comps: "Loyalty/rewards platforms · neobanks · Clean Energy Fuels · Cummins · RNG fleet operators",
-      compsNote: "Two unrelated legs (consumer app + trucking fleet) usually draw a lower combined multiple, not a premium. Token / carbon-NFT layer excluded from the base case. RNG leg has upside from LCFS / RIN credits not yet modeled."
-    },
-    carrier: {
-      name: "CarrierAudit.AI",
-      tagline: "Aviation safety, audit & operations intelligence — multi-sided platform (operators, fleets, government, insurers)",
-      econHeader: "Value economics · by segment",
-      vertical: "Aviation & Aerospace",
-      stage: "Demonstration",
-      provisional: true,
-      today: "$5M – $8M", todaySub: "gov/defense wedge via LOGCAP & theater-aviation heritage",
-      leader: "$310M", leaderSub: "~$44.7M leader ARR × ~7× data-platform multiple",
-      econ: [
-        {k:"Gov / defense", v:"$300K", s:"ARPU · ~40 accounts", green:true},
-        {k:"Regional airlines", v:"$150K", s:"ARPU · ~70 accounts"},
-        {k:"Large charter / fractional", v:"$60K", s:"ARPU · ~250 accounts"},
-        {k:"Leader ARR", v:"$44.7M", s:"across all segments", green:true}
-      ],
-      ladder: [
-        {t:"MVP", v:"$4M", n:4},
-        {t:"Demonstration", v:"$7M", n:7, now:true},
-        {t:"Early Traction", v:"$25M", n:25},
-        {t:"Scale", v:"$95M", n:95},
-        {t:"Leader", v:"$310M", n:310}
-      ],
-      upside: null,
-      comps: "ARGUS · Wyvern · CAMP Systems · Veryon · Web Manuals; gov primes KBR / Leidos / V2X",
-      compsNote: "Data-network flywheel: every operator audited makes the dataset more valuable to insurers and brokers. Insurer segment is highest-value but slowest. Win one segment (gov or large charter), build the dataset, then expand."
-    },
-    lng: {
-      name: "LNGBridgeAI",
-      tagline: "Flared-gas → LNG/H2 fuel supply + heavy-truck fleet ops + AI origination",
-      econHeader: "Unit economics",
-      vertical: "Energy · Trucking · Industrial Transition",
-      stage: "Demonstration",
-      provisional: true,
-      today: "$18M – $40M", todaySub: "40-truck flare-to-fleet pilot (NPV → 5-yr EBITDA)",
-      leader: "$405M", leaderSub: "full-buildout NPV@20%; ~$415M/yr EBITDA at scale",
-      econ: [
-        {k:"Fuel margin", v:"$1.55/gal", s:"$0.95 produce → $2.50 sell", green:true},
-        {k:"Per tractor", v:"$200K", s:"cash flow / yr", green:true},
-        {k:"Pilot (40 trucks)", v:"$18M NPV", s:"$40M 5-yr EBITDA"},
-        {k:"Full buildout", v:"$415M/yr", s:"EBITDA at scale · ~$430M capex"}
-      ],
-      ladder: [
-        {t:"MVP", v:"$18M", n:18},
-        {t:"Demonstration", v:"$40M", n:40, now:true},
-        {t:"Early Traction", v:"$120M", n:120},
-        {t:"Scale", v:"$260M", n:260},
-        {t:"Leader", v:"$405M", n:405}
-      ],
-      upside: null,
-      comps: "Clean Energy Fuels · Stabilis · Chart Industries · New Fortress · Cheniere; H2: Plug, Air Products, Cummins; gov: KBR / Leidos",
-      compsNote: "Energy infrastructure — valued on DCF / EBITDA multiples, not software multiples; ~$430M+ capex (20 LNG plants + truck fleet). Figures are the founder's 2021 regional pro-formas (F2F-H2 pilot NPV ~$18M; LBF full-buildout NPV ~$405M). The model's '10× cumulative EBITDA' going-public figure is excluded as non-standard."
-    },
-    rewmo: {
-      name: "RewmoAI",
-      tagline: "Turns rent, loans & everyday payments into rewards, credit, and home-down-payment savings",
-      econHeader: "Value economics · per user",
-      vertical: "Fintech & Banking · Consumer",
-      stage: "MVP · bootstrapped",
-      provisional: true,
-      today: "$1.5M – $3.0M", todaySub: "bootstrapped restart at a focused, smaller scope",
-      leader: "$150M", leaderSub: "category-leader case · ~500K active users",
-      econ: [
-        {k:"Monetized volume", v:"~$18K/yr", s:"recurring payments routed / user"},
-        {k:"Value created / user", v:"$300/yr", s:"rewards + credit + cash flow", green:true},
-        {k:"Revenue / user (take)", v:"$60/yr", s:"interchange + partner fees", green:true},
-        {k:"Reachable base", v:"40M+ renters", s:"US rent + consumer-loan market"}
-      ],
-      ladder: [
-        {t:"MVP", v:"$1.5M", n:1.5, now:true},
-        {t:"Demonstration", v:"$3M", n:3},
-        {t:"Early Traction", v:"$12M", n:12},
-        {t:"Scale", v:"$45M", n:45},
-        {t:"Leader", v:"$150M", n:150}
-      ],
-      upside: null,
-      comps: "Bilt Rewards · Self · Chime · Visa / Mastercard · proptech (RealPage, Entrata)",
-      compsNote: "Closest comp is Bilt Rewards (rent-into-rewards). Likely buyers span neobanks, card networks, credit-building fintechs, and proptech rent platforms. Valued on a consumer-fintech lens (users × value / take), not the labor-displacement lens."
-    },
-    projmgt: {
-      name: "ProjMgt.AI",
-      tagline: "AI estimating & preconstruction for architectural millwork",
-      vertical: "Construction & Infrastructure",
-      stage: "Demonstration",
-      today: "$1.6M \u2013 $3.0M", todaySub: "current product: millwork estimating",
-      leader: "$70M \u2192 $315M", leaderSub: "estimating \u2192 full platform",
-      econ: [
-        {k:"Role displaced", v:"Estimator", s:"$125K loaded / yr"},
-        {k:"Throughput absorbed", v:"0.5 FTE", s:"per customer"},
-        {k:"Value created", v:"$62.5K", s:"per customer / yr", green:true},
-        {k:"Sustainable revenue", v:"$11.3K", s:"at 18% capture", green:true}
-      ],
-      ladder: [
-        {t:"MVP", v:"$1.6M", n:1.6},
-        {t:"Demonstration", v:"$2.3M", n:2.3, now:true},
-        {t:"Early Traction", v:"$5.9M", n:5.9},
-        {t:"Scale", v:"$21M", n:21.2},
-        {t:"Leader", v:"$70M", n:70.1}
-      ],
-      upside: [
-        {t:"Estimating only", v:"$70M", s:"one role \u00b7 one function"},
-        {t:"Millwork end-to-end", v:"$315M", s:"+ bid \u00b7 material \u00b7 drawings \u00b7 CNC", hot:true},
-        {t:"All-trades (thesis)", v:"$2.1B", s:"same depth, every fab trade"}
-      ],
-      comps: "Cabinet Vision (Hexagon) \u00b7 Microvellum \u00b7 Cyncly (PE-backed)",
-      compsNote: "Design-to-CNC millwork software is an actively acquired and consolidated category \u2014 strategic and private-equity buyers both present."
-    },
-    bidforge: {
-      name: "BidForgeAI",
-      tagline: "AI bid automation for general contractors & construction firms",
-      vertical: "Construction & Infrastructure",
-      stage: "Demonstration",
-      today: "$4.2M \u2013 $7.8M", todaySub: "production-ready asset, building traction",
-      leader: "$243M", leaderSub: "revenue-agent lens \u00b7 range $185M\u2013$301M",
-      econ: [
-        {k:"Time displaced", v:"20h \u2192 <3h", s:"per bid"},
-        {k:"Value created", v:"$189K", s:"per customer / yr (blended)", green:true},
-        {k:"Sustainable revenue", v:"$34K", s:"per customer / yr", green:true},
-        {k:"Asset scale", v:"102 tables", s:"38 agents \u00b7 69 APIs"}
-      ],
-      ladder: [
-        {t:"MVP", v:"$4.8M", n:4.75},
-        {t:"Demonstration", v:"$6.0M", n:5.98, now:true},
-        {t:"Early Traction", v:"$13M", n:13.4},
-        {t:"Scale", v:"$50M", n:49.9},
-        {t:"Leader", v:"$243M", n:243}
-      ],
-      upside: null,
-      comps: "Procore \u00b7 Autodesk Construction Cloud \u00b7 Trimble \u00b7 Constellation Software (PE)",
-      compsNote: "Construction bid & estimating software is consolidating \u2014 strategic platforms and PE roll-ups are both active acquirers."
-    }
-  };
-
-  const reportOverlay = document.getElementById('reportOverlay');
-  const reportBody = document.getElementById('reportBody');
-  const reportClose = document.getElementById('reportClose');
-  let lastFocused = null;
-
-  function rEsc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-
-  function rLadder(rungs){
-    var max = Math.max.apply(null, rungs.map(function(r){ return r.n; }));
-    var bars = rungs.map(function(r){
-      var hgt = Math.round((Math.sqrt(r.n)/Math.sqrt(max))*96)+12;
-      return '<div class="val-rung '+(r.now?'now':'')+'"><span class="bv">'+rEsc(r.v)+'</span><div class="bar" style="height:'+hgt+'px"></div></div>';
-    }).join('');
-    var labels = rungs.map(function(r){ return '<span class="'+(r.now?'now':'')+'">'+rEsc(r.t)+'</span>'; }).join('');
-    return '<div class="val-ladder">'+bars+'</div><div class="val-rung-labels">'+labels+'</div>';
-  }
-
-  function rRender(d){
-    var econ = d.econ.map(function(e){
-      var color = e.green ? 'color:var(--green-cert)' : 'color:var(--text-primary)';
-      return '<div><div class="val-k">'+rEsc(e.k)+'</div><div class="val-fig" style="font-size:1.1rem;'+color+'">'+rEsc(e.v)+'</div><div class="val-sub">'+rEsc(e.s)+'</div></div>';
-    }).join('');
-    var upside = '';
-    if (d.upside) {
-      upside = '<div class="report-h">The upside lever \u00b7 functional depth lifts the ceiling</div><div class="report-upside">'+
-        d.upside.map(function(u){
-          return '<div class="'+(u.hot?'hot':'')+'"><div class="val-k" style="color:var(--text-secondary)">'+rEsc(u.t)+'</div><div class="val-fig leader" style="font-size:1.25rem;margin:0.2rem 0">'+rEsc(u.v)+'</div><div class="val-sub">'+rEsc(u.s)+'</div></div>';
-        }).join('')+'</div>';
-    }
-    return '<div class="report-eyebrow">Agent Capital Valuation Report</div>'+
-      '<hr class="report-rule">'+
-      '<div class="report-name" id="reportName">'+rEsc(d.name)+'</div>'+
-      '<div class="report-tagline">'+rEsc(d.tagline)+'</div>'+
-      '<div class="report-meta"><span class="val-stage" style="margin:0">'+rEsc(d.stage)+' stage</span><span class="report-vert">'+rEsc(d.vertical)+'</span></div>'+
-      '<div class="report-hero">'+
-        '<div><div class="val-k">Indicative \u00b7 today</div><div class="val-fig today" style="font-size:1.5rem">'+rEsc(d.today)+'</div><div class="val-sub">'+rEsc(d.todaySub)+'</div></div>'+
-        '<div class="leadercard"><div class="val-k">Leader potential</div><div class="val-fig leader" style="font-size:1.5rem">'+rEsc(d.leader)+'</div><div class="val-sub">'+rEsc(d.leaderSub)+'</div></div>'+
-      '</div>'+
-      '<div class="report-h">'+(d.econHeader||'Value economics \u00b7 per customer')+'</div>'+
-      '<div class="report-econ">'+econ+'</div>'+
-      '<div class="report-h">Valuation ladder \u00b7 by maturity tier</div>'+
-      rLadder(d.ladder)+
-      upside+
-      '<div class="report-h">Comparables &amp; strategic buyers</div>'+
-      '<div class="report-comps"><b>'+rEsc(d.comps)+'</b></div>'+
-      '<div class="report-note">'+rEsc(d.compsNote)+'</div>'+
-      '<div class="report-method">Triangulated across three lenses, weighted by maturity tier \u2014 Cost / Replacement (floor), Realized Revenue (ARR \u00d7 multiple), and Value-Created (the Agent Capital lens). A structured valuation framework for marketplace positioning \u2014 not a formal appraisal, audit, or investment advice. \u00b7 AICM certified.' + (d.provisional ? ' \u00b7 First-pass model \u2014 inputs under review.' : '') + '</div>';
-  }
-
-  function openReport(key){
-    var d = REPORTS[key];
-    if(!d) return;
-    reportBody.innerHTML = rRender(d);
-    lastFocused = document.activeElement;
-    reportOverlay.hidden = false;
-    reportOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    reportClose.focus();
-  }
-  function closeReport(){
-    reportOverlay.classList.remove('open');
-    reportOverlay.hidden = true;
-    document.body.style.overflow = '';
-    if(lastFocused) lastFocused.focus();
-  }
-  document.querySelectorAll('.val-report').forEach(function(btn){
-    btn.addEventListener('click', function(){ openReport(btn.getAttribute('data-report')); });
-  });
-  reportClose.addEventListener('click', closeReport);
-  reportOverlay.addEventListener('click', function(e){ if(e.target === reportOverlay) closeReport(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && reportOverlay.classList.contains('open')) closeReport(); });
 
   // Form submit handler
   document.getElementById('intakeForm').addEventListener('submit', function(e) {
